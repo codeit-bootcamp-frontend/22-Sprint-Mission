@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+/* Color Variables */
+:root {
+    /* Gray */
+    --gray900: #111827;
+    --gray800: #1F2937;
+    --gray700: #374151;
+    --gray600: #4B5563;
+    --gray500: #6B7280;
+    --gray400: #9CA3AF;
+    --gray200: #E5E7EB;
+    --gray100: #F3F4F6;
+    --gray50: #F9FAFB;
+    
+    /* Blue */
+    --blue: #3692FF;
+}
+
+/*reset*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+body {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}

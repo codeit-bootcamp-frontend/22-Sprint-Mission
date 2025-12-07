@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/reset.css" />
+        <link rel="stylesheet" href="/css/login.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
+        <title>로그인</title>
+    </head>
+    <body>
+        <main class="login-container">
+            <header>
+                <a href="/" class="logo-link"><img src="/img/logo.png" alt="판다마켓 로고" /></a>
+            </header>
+            <form action="/login" method="post">
+                <fieldset class="input_box">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" required placeholder=" " />
+                    <span class="error-message" data-error="invalid">잘못된 이메일 형식입니다.</span>
+                </fieldset>
+
+                <fieldset class="input_box">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" name="password" required minlength="8" placeholder=" " />
+                    <img src="/img/icon-password-hide.png" alt="비밀번호 보기" class="input-icon" />
+                    <span class="error-message" data-error="short">비밀번호를 8자 이상 입력해주세요.</span>
+                </fieldset>
+
+                <button type="submit">로그인</button>
+            </form>
+            <aside class="easy_log">
+                <p>간편 로그인하기</p>
+                <ul class="icon">
+                    <li>
+                        <a href="https://www.google.com/" target="_blank"><img src="/img/icon-google.png" alt="구글 로그인" /></a>
+                    </li>
+                    <li>
+                        <a href="https://www.kakaocorp.com/page/" target="_blank"><img src="/img/icon-kakao.png" alt="카카오 로그인" /></a>
+                    </li>
+                </ul>
+            </aside>
+            <p class="signup_link">판다마켓이 처음이신가요? <a href="join.html">회원가입</a></p>
+        </main>
+    </body>
+</html>
