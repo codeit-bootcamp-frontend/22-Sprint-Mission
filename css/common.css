@@ -1,0 +1,31 @@
+/* 공통 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #374151;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Pretendard Variable', Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+:root {
+  --primary-color-100: #3692ff;
+  --primary-color-200: #1967d6;
+  --primary-color-300: #1251aa;
+  --error-red-color: #f74747;
+}
+.btn {
+  cursor: pointer;
+}
+.btn.blue {
+  background-color: var(--primary-color-100);
+  color: #fff;
+}
+.img-wrap {
+  display: flex;
+}
+img {
+  width: 100%;
+}
