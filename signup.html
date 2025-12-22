@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 페이지 - 판다마켓</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset-min.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+    />
+    <script defer src="./src/auth.js"></script>
+  </head>
+  <body>
+    <h1 class="sr-only">회원가입 페이지 - 판다마켓</h1>
+    <div class="auth-container">
+      <a class="home-link" href="./" alt="판다마켓">
+        <img class="logo" src="/images/logo/logo.svg" alt="판다마켓"
+      /></a>
+      <!-- 이메일/비밀번호 입력 영역 -->
+      <form class="auth-form">
+        <div class="input-field">
+          <label for="email" class="title">이메일</label>
+          <input
+            type="text"
+            name=""
+            id="email"
+            placeholder="아이디 또는 이메일"
+          />
+        </div>
+        <div class="input-field">
+          <label for="nickname" class="title">닉네임</label>
+          <input type="text" name="" id="nickname" placeholder="닉네임" />
+        </div>
+        <div class="input-field">
+          <label for="password" class="title">비밀번호</label>
+          <div class="password-container">
+            <input
+              type="password"
+              name=""
+              id="password"
+              placeholder="비밀번호"
+            />
+            <button type="button" class="btn-visibility">
+              <img
+                src="./images/icon/btn_visibility_off.svg"
+                alt="비밀번호 보기"
+              />
+            </button>
+          </div>
+        </div>
+        <div class="input-field">
+          <label for="password-confirm" class="title">비밀번호 확인</label>
+          <div class="password-container">
+            <input
+              type="password"
+              name=""
+              id="password-confirm"
+              placeholder="비밀번호"
+            />
+            <button type="button" class="btn-visibility">
+              <img
+                src="./images/icon/btn_visibility_off.svg"
+                alt="비밀번호 보기"
+              />
+            </button>
+          </div>
+        </div>
+        <button type="submit" class="submit-btn">회원가입</button>
+      </form>
+      <!-- 간편 로그인 영역 -->
+      <div class="short-cut">
+        <p>간편 로그인하기</p>
+        <ul class="sns-list">
+          <!-- 구글 -->
+          <li class="sns">
+            <a href="" target="_blank">
+              <img src="/images/icon/ic_google.svg" alt="구글" />
+            </a>
+          </li>
+          <!-- 카카오 -->
+          <li class="sns">
+            <a href="" target="_blank">
+              <img src="/images/icon/ic_kakao.svg" alt="카카오" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- 회원가입 영역 -->
+      <div class="helper-text">
+        <p>이미 회원이신가요? <a href="./login.html">로그인</a></p>
+      </div>
+    </div>
+  </body>
+</html>

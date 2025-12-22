@@ -36,7 +36,8 @@
   display: flex;
 }
 img {
-  width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 /* 섹션 공통 스타일 */
