@@ -173,3 +173,52 @@ aside.easy_log img {
     text-decoration: underline;
     color: var(--blue);
 }
+
+/* ========================================
+   반응형 스타일 (Responsive Styles)
+   ======================================== */
+
+/* Tablet: 768px 이상 ~ 1199px 이하 - PC와 동일한 디자인 유지 */
+@media (min-width: 768px) and (max-width: 1199px) {
+    /* Tablet 사이즈에서도 PC와 동일한 디자인 유지 */
+    input {
+        width: 640px;
+    }
+    
+    aside.easy_log {
+        width: 640px;
+    }
+}
+
+/* Mobile: 375px 이상 ~ 767px 이하 */
+@media (min-width: 375px) and (max-width: 767px) {
+    .login-container {
+        padding: 60px 16px;
+        align-items: stretch;
+    }
+    
+    form {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    input {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    aside.easy_log {
+        width: 100%;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .signup_link {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
