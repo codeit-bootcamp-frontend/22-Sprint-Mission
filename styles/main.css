@@ -157,6 +157,7 @@ footer {
 }
 
 .footer-links {
+    
     display: flex;
     gap: 30px;
     color: var(--gray-200);
