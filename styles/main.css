@@ -162,7 +162,7 @@ footer {
     color: var(--gray-200);
 }
 
-footer-icons {
+.footer-icons {
     display: flex;
     gap: 12px;
 }
