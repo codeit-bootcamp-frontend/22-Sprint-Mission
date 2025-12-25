@@ -85,6 +85,9 @@ header {
     .item-check-center, .item-search-center, .item-register-center {
         gap: 40px;
     }
+   .item-search-center {
+        flex-direction: row-reverse; 
+    }
 }
 /* 모바일 사이즈 */
 @media (max-width: 767px){
@@ -111,6 +114,9 @@ header {
     .item-check-center, .item-search-center, .item-register-center {
         flex-direction: column !important;
         gap: 20px;
+    }
+    .item-search-center {
+        flex-direction: column-reverse !important;
     }
 }
 
