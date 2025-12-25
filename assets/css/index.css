@@ -58,8 +58,8 @@ body {
   padding: 12px 23px;
 }
 
-/* 위쪽 배너 */
-.banner-top {
+/* 위쪽, 아래쪽 배너 */
+.banner {
   width: 100%;
   height: 540px;
   background-color: #CFE5FF;
@@ -76,7 +76,7 @@ body {
 }
 
 /* 타이틀, 버튼 묶음 */
-.banner-content {
+.banner-content-top {
   margin-bottom: 100px;
 }
 
@@ -86,7 +86,7 @@ body {
   line-height: 140%;
 }
 
-.banner-top-img {
+.banner-img-top {
   width: 746px;
   height: 340px;
 }
@@ -145,4 +145,13 @@ body {
 
 .feature-content-right {
   text-align: right;
+}
+
+.banner-img-bottom {
+  width: 746px;
+  height: 397px;
+}
+
+.banner-content-bottom {
+  margin-bottom: 140px;
 }
