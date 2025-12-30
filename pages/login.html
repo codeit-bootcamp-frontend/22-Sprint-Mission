@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>판다마켓-로그인</title>
+    <meta name="description" content="판다마켓 로그인 페이지" />
+    <link rel="icon" href="../favicon.png" type="image/png" />
+
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/auth.css" />
+    <link rel="stylesheet" href="../css/colors.css" />
+
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+  </head>
+  <body>
+    <main class="auth-container auth-login-layout">
+      <div class="auth-logo">
+        <a href="/">
+          <img src="../assets/logo.svg" alt="판다마켓" class="logo-img" />
+        </a>
+    </div>
+
+      <form class="auth-form">
+        <div class="auth-field">
+          <label for="email" class="auth-label">이메일</label>
+          <input
+            id="email"
+            name="email"
+            class="auth-input"
+            placeholder="이메일을 입력해주세요"
+            type="email"
+            autocomplete="email"
+            required
+          />
+        </div>
+
+        <div class="auth-field">
+          <label for="password" class="auth-label">비밀번호</label>
+          <div class="auth-password-container">
+            <input
+              id="password"
+              name="password"
+              class="auth-input"
+              placeholder="비밀번호를 입력해주세요"
+              type="password"
+              required
+            />
+            <button type="button" class="auth-password-toggle">
+              <img src="../assets/icons/ic_eye_off.svg" alt="비밀번호 보기/숨기기">
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="auth-submit-button">로그인</button>
+      </form>
+
+      <section class="auth-sns-section">
+        <p class="auth-sns-text">간편 로그인하기</p>
+        <ul class="auth-sns-icons">
+          <li>
+            <a href="https://www.kakaocorp.com/page/">
+              <img src="../assets/icons/ic_kakao.png" alt="kakao">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.google.com/">
+              <img src="../assets/icons/ic_google.png" alt="google">
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section class="auth-signup-section">
+        <p class="auth-signup-text">판다마켓이 처음이신가요? <a href="signup.html">회원가입</a></p>
+      </section>
+    </main>
+  </body>
+</html>
