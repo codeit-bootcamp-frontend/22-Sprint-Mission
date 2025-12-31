@@ -1,0 +1,191 @@
+
+#header {  
+  padding: 0 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  position: relative;
+}
+
+
+#header .logo > a { 
+  display: flex;
+  align-items: center;
+}
+
+#header .logoImg { 
+  width: 40px;
+  height: 40px;
+  background-color: #3692FF;
+  border-radius:12px;
+  display:inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 9px;
+
+}
+
+#header .logo a span { 
+  font-family: 'ROKAFSansBold';
+  font-size: 26px;
+  color: #3692FF;
+}
+
+#header .login_btn { 
+  width: 128px;
+  line-height: 48px;
+  background-color: #3692FF;
+  border-radius: 8px; 
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'PretnedardSB';
+  cursor: pointer;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  right: 400px;
+}
+
+.bannerArea { 
+  background-color: #CFE5FF;
+  padding: 0 405px;
+  height: 540px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.bannerArea .banner_box { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bannerArea .banner_box .leftBox {
+  margin-right: 7px;
+}
+.bannerArea.last .banner_box .leftBox {
+  margin-right: 69px;
+}
+
+.bannerArea .leftBox .txt {
+  font-family: 'PretendardB';
+  font-size: 40px;
+  color: #374151;
+  line-height: 140%;
+  white-space: nowrap;
+}
+
+.bannerArea .items_btn { 
+  width: 357px;
+  line-height: 56px;
+  border-radius: 40px;
+  background: #3692FF;
+  font-family: 'PretendardSB';
+  font-size: 20px;
+  margin-top: 32px;
+  cursor: pointer;
+  color: #fff;
+  display: inline-block;
+  text-align: center;  
+}
+
+
+
+.container .contlist .contArea { 
+  padding: 138px 0;
+}
+
+.container .contlist .contArea .contBox {
+  width: 988px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  background: #FCFCFC;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.container .contlist .contArea .contBox.lbox .txtbox { 
+  margin-left: 40px;
+}
+
+.container .contlist .contArea .contBox.rbox .txtbox { 
+  margin-right: 64px;
+  margin-left: 38px;
+  text-align: right;
+}
+
+.container .contlist .contArea .contBox .txtbox .box_title { 
+  font-size: 18px;
+  font-family: 'AbhayaLibreEB';
+  color: #3692FF;
+  display: block;
+  margin-bottom: 12px;
+
+}
+
+.container .contlist .contArea .contBox .txtbox .intro { 
+  font-size: 40px;
+  font-family: 'PretendardB';
+  color: #374151;
+  margin-bottom: 24px;
+  line-height: 140%;
+}
+
+.container .contlist .contArea .contBox .txtbox >p { 
+  font-size: 24px;
+  font-family: 'PretendardM';
+  color: #374151;
+  margin-bottom: 24px;
+  line-height: 32px;
+}
+
+.container .contlist .contArea:nth-child(1) .imgbox { 
+  margin-left: 24px;
+}
+
+#footer { 
+  display: flex;
+  justify-content: space-between;
+  padding: 32.5px 400px 108.5px;
+  background-color: #111827;
+  font-family: 'PretendardR';
+  font-size: 16px;
+}
+
+#footer .copyright { 
+  color: #9CA3AF;
+}
+
+
+#footer .center_nav >span { 
+  margin : 0 15px;
+  cursor: pointer;
+}
+#footer .center_nav >span a{ 
+  color: #E5E7EB;
+}
+
+#footer .sns_list a { 
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
