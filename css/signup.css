@@ -1,4 +1,4 @@
-body {
+body{
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -18,19 +18,6 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
-}
-
-.logo {
-  width: 104px;
-  height: auto;
-}
-
-.logo-text {
-  font-family: 'ROKAF Sans', sans-serif;
-  font-size: 66px;
-  line-height: 90px;
-  font-weight: 700;
-  color: #3692ff;
 }
 
 .auth-form {
@@ -60,6 +47,12 @@ body {
   border-radius: 12px;
   font-size: 16px;
   color: #1f2937;
+}
+
+.input-field input:focus {
+  outline: 2px solid #3692ff;
+  outline-offset: 2px;
+  background: #ffffff;
 }
 
 .auth-form-button {

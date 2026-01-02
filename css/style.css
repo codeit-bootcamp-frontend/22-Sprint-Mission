@@ -1,10 +1,3 @@
-@font-face {
-  font-family: 'ROKAF Sans';
-  src: url('./fonts/ROKAF Sans Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -28,33 +21,9 @@ a {
 }
 
 .gnb-inner {
-  max-width: 1110px;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.logo {
-  margin: 0;
-}
-
-.logo a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.logo img {
-  width: 40px;
-  height: 40px;
-}
-
-.logo-text {
-  font-weight: 700;
-  font-size: 26px;
-  color: #3692ff;
-  font-family: 'ROKAF Sans', Pretendard, sans-serif;
 }
 
 .login-btn {
@@ -80,8 +49,6 @@ a {
 }
 
 .hero-inner {
-  max-width: 1110px;
-  width: 100%;
   height: 340px;
   display: flex;
   justify-content: space-between;
@@ -117,10 +84,6 @@ a {
   color: #f9fafb;
 }
 
-.hero-image {
-  width: 746px;
-  height: 340px;
-}
 
 .section {
   width: 100%;
@@ -212,8 +175,6 @@ a {
 }
 
 .bottom-inner {
-  max-width: 1110px;
-  width: 100%;
   height: 397px;
   display: flex;
   align-items: center;
@@ -244,7 +205,13 @@ a {
 }
 
 .footer-inner {
-  max-width: 1110px;
-  width: 100%;
   height: 100%;
+}
+
+.gnb-inner,
+.hero-inner,
+.bottom-inner,
+.footer-inner {
+  flex: 0 1 1110px;
+  width: 100%;
 }
