@@ -45,18 +45,6 @@ a {
   gap: 8px;
 }
 
-.logo img {
-  width: 40px;
-  height: 40px;
-}
-
-.logo-text {
-  font-weight: 700;
-  font-size: 26px;
-  color: #3692ff;
-  font-family: 'ROKAF Sans', Pretendard, sans-serif;
-}
-
 .login-btn {
   width: 128px;
   height: 48px;
