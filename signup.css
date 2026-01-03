@@ -92,6 +92,8 @@ width: 640px;
   width: 640px;
   height : auto;
   gap : 16px;
+  display: flex;         
+  flex-direction: column;
 }
 .login-nickname p {
   width: 47px;
@@ -111,12 +113,32 @@ width: 640px;
   background: #F3F4F6;
   border: none;
 }
-
+.login-nickname .error-msg {   
+  width: 100%;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #F74747;
+  margin-top: 6px;
+  display: none;
+  margin: 0 10px;
+}
+.error-msg.show {
+    display: block;
+}
+.login-nickname input.input-error {
+    border: 1px solid #f74747;
+    outline: none;  
+}
 
 .login-password {
   width: 640px;
   height : auto;
   gap : 16px;
+  display: flex;      
+  flex-direction: column;
 }
 .login-password p {
   width: 63px;
@@ -136,11 +158,32 @@ width: 640px;
   background: #F3F4F6;
   border: none;
 }
+.login-password .error-msg {   
+  width: 100%;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #F74747;
+  margin-top: 6px;
+  display: none;
+  margin: 0 10px;
+}
+.error-msg.show {
+    display: block;
+}
+.login-password input.input-error {
+    border: 1px solid #f74747;
+    outline: none;  
+}
 
 .login-password-right {
   width: 640px;
   height : auto;
   gap : 16px;
+  display: flex;         
+  flex-direction: column;
 }
 .login-password-right p {
   width: 100px;
@@ -159,6 +202,25 @@ width: 640px;
   gap :10px;
   background: #F3F4F6;
   border: none;
+}
+.login-password-right .error-msg {   
+  width: 100%;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #F74747;
+  margin-top: 6px;
+  display: none;
+  margin: 0 10px;
+}
+.error-msg.show {
+    display: block;
+}
+.login-password-right input.input-error {
+    border: 1px solid #f74747;
+    outline: none;  
 }
 
 .password-input {
