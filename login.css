@@ -39,24 +39,23 @@ align-items: flex-start;
 padding: 0px;
 gap: 24px;
 width: 640px;
-height: 300px;
+height: auto;
 
 }
 
 .login-email {
   width: 640px;
-  height : 98px;
-  gap : 16px;
+  /* gap : 16px; */
+  height : auto;
 }
-.login-email p {
+.login-email p:first-child {
   width: 47px;
   height: 26px;
   font-family: 'Pretendard';
-  font-style: normal;
   font-weight: 700;
   font-size: 18px;
-  line-height: 26px;
   color: #1F2937;
+  margin-bottom: 10px;
 }
 .login-email input {
   width : 640px;
@@ -66,8 +65,27 @@ height: 300px;
   background: #F3F4F6;
   border: none;
 }
+.login-email input.input-error {
+    border: 1px solid #f74747;
+    outline: none;  
+}
 
-
+/* 우선순위 높임 */
+.login-email .error-msg {   
+  width: 100%;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #F74747;
+  margin-top: 6px;
+  display: none;
+  margin-left : 10px;
+}
+.error-msg.show {
+    display: block;
+}
 
 
 .login-password {
