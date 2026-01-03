@@ -10,6 +10,9 @@ const passwordErrorMsg = document.getElementById('passwordErrorMsg');
 const passwordCheckInput = document.getElementById('passwordCheckInput');
 const passwordCheckErrorMsg = document.getElementById('passwordCheckErrorMsg');
 
+
+const signupButton = document.querySelector('.login-button');
+
 function validateEmail(email) {
   const pattern = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
   return pattern.test(email);
@@ -77,15 +80,61 @@ passwordCheckInput.addEventListener('focusout', function() {
   const value = passwordCheckInput.value;
   const passwordValue = passwordInput.value;
 
-  // 1. 값이 같은지 확인
+  
   if (value !== passwordValue) {
     passwordCheckInput.classList.add('input-error');
     passwordCheckErrorMsg.textContent = "비밀번호가 일치하지 않습니다.";
     passwordCheckErrorMsg.classList.add('show');
   } 
-  // 2. 일치하면 에러 제거
   else {
     passwordCheckInput.classList.remove('input-error');
     passwordCheckErrorMsg.classList.remove('show');
   }
 });
+
+
+
+function checkSignupValidity() {
+  const emailValue = emailInput.value.trim();
+  const nicknameValue = nicknameInput.value.trim();
+  const passwordValue = passwordInput.value; // 공백 포함 가능
+  const passwordCheckValue = passwordCheckInput.value;
+
+  const isEmailValid = validateEmail(emailValue);
+  
+  const isNicknameValid = nicknameValue !== '';
+  
+  const isPasswordValid = passwordValue.length >= 8;
+  
+  const isPasswordCheckValid = (passwordCheckValue === passwordValue) && (passwordCheckValue !== '');
+
+  if (isEmailValid && isNicknameValid && isPasswordValid && isPasswordCheckValid) {
+    signupButton.disabled = false;
+    signupButton.style.backgroundColor = '#3692FF'; 
+    signupButton.style.cursor = 'pointer';
+  } else {
+    signupButton.disabled = true;
+    signupButton.style.backgroundColor = '#9CA3AF'; 
+    signupButton.style.cursor = 'not-allowed';
+  }
+}
+
+// 모든 입력창에 'input' 이벤트 연결 (타이핑 할 때마다 검사)
+emailInput.addEventListener('input', checkSignupValidity);
+nicknameInput.addEventListener('input', checkSignupValidity);
+passwordInput.addEventListener('input', checkSignupValidity);
+passwordCheckInput.addEventListener('input', checkSignupValidity);
+
+
+signupButton.addEventListener('click', function(e) {
+  e.preventDefault(); // 폼 전송 막기
+  
+  // 버튼이 활성화된 상태라면 이동
+  if (!signupButton.disabled) {
+    
+    location.href = "./login.html"; 
+  }
+});
+
+// 페이지 로드 시 한 번 검사(비활성화 상태로 시작)
+checkSignupValidity();

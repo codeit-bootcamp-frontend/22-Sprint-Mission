@@ -268,6 +268,13 @@ width: 640px;
   line-height: 32px;
   color: #F3F4F6;
 }
+
+.login-button:disabled {
+  background: #9CA3AF; 
+  cursor: not-allowed; 
+  color: #F3F4F6;
+}
+
 .login-buttonbox {
   margin-top: 12px;
 }
