@@ -81,7 +81,7 @@ height: auto;
   color: #F74747;
   margin-top: 6px;
   display: none;
-  margin-left : 10px;
+  margin: 0 10px;
 }
 .error-msg.show {
     display: block;
@@ -90,7 +90,7 @@ height: auto;
 
 .login-password {
   width: 640px;
-  height : 98px;
+  height: auto;
   gap : 16px;
 }
 .login-password p {
@@ -109,6 +109,27 @@ height: auto;
   border-radius : 12px;
   background: #F3F4F6;
   border: none;
+}
+
+.login-password .error-msg {
+  width: 100%;
+  height: auto;
+  margin-top: 6px;
+  
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-size: 14px;
+  color: #F74747;
+  display: none;
+  margin: 0 10px;
+}
+.login-password input.input-error {
+  border: 1px solid #F74747;
+  outline: none;
+}
+
+.login-password .error-msg.show {
+  display: block;
 }
 
 .password-input {
