@@ -45,8 +45,10 @@ width: 640px;
 
 .login-email {
   width: 640px;
-  height : 98px;
+  height: auto;
   gap : 16px;
+  display: flex;        
+  flex-direction: column;
 }
 .login-email p {
   width: 47px;
@@ -66,10 +68,29 @@ width: 640px;
   background: #F3F4F6;
   border: none;
 }
+.login-email .error-msg {   
+  width: 100%;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #F74747;
+  margin-top: 6px;
+  display: none;
+  margin: 0 10px;
+}
+.error-msg.show {
+    display: block;
+}
+.login-email input.input-error {
+    border: 1px solid #f74747;
+    outline: none;  
+}
 
 .login-nickname {
   width: 640px;
-  height : 98px;
+  height : auto;
   gap : 16px;
 }
 .login-nickname p {
@@ -94,7 +115,7 @@ width: 640px;
 
 .login-password {
   width: 640px;
-  height : 98px;
+  height : auto;
   gap : 16px;
 }
 .login-password p {
@@ -118,7 +139,7 @@ width: 640px;
 
 .login-password-right {
   width: 640px;
-  height : 98px;
+  height : auto;
   gap : 16px;
 }
 .login-password-right p {
