@@ -24,6 +24,8 @@ emailInput.addEventListener('focusout', function() {
     emailInput.classList.remove('input-error');  
     emailErrorMsg.classList.remove('show');   
   }
+
+  checkFormValidity();
 });
 
 
@@ -51,10 +53,50 @@ passwordInput.addEventListener('focusout', function() {
     passwordInput.classList.remove('input-error');
     passwordErrorMsg.classList.remove('show');
   }
+
+  checkFormValidity();
 });
 
 
 passwordInput.addEventListener('input', function() {
   passwordInput.classList.remove('input-error');
   passwordErrorMsg.classList.remove('show');
+});
+
+
+const loginButton = document.querySelector('.login-button');
+
+function checkFormValidity() {
+  const emailValue = emailInput.value.trim();
+  const passwordValue = passwordInput.value; // 비밀번호는 trim() 하지 않음
+
+  const isEmailValid = validateEmail(emailValue);
+  const isPasswordValid = passwordValue.length >= 8;
+
+  if (isEmailValid && isPasswordValid) {
+    loginButton.disabled = false;
+    loginButton.style.backgroundColor = '#3692FF'; 
+  } else {
+    loginButton.disabled = true;
+    loginButton.style.backgroundColor = '#9CA3AF'; 
+  }
+}
+
+// 기본값
+checkFormValidity();
+
+emailInput.addEventListener('input', checkFormValidity);
+passwordInput.addEventListener('input', checkFormValidity);
+
+
+
+
+loginButton.addEventListener('click', function(e) {
+  // form 태그 안에 버튼이 있으므  기본 동작 막아야함 
+  e.preventDefault(); 
+  
+
+  if (!loginButton.disabled) {
+    location.href = "./items.html"; 
+  }
 });
