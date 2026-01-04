@@ -1,10 +1,11 @@
+
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Pretendard, sans-serif;
 }
 
 a {
@@ -19,31 +20,24 @@ a {
   display: flex;
   justify-content: center;
   background: #fff;
-  background: #fff;
 }
 
 .gnb-inner {
-  width: 1120px;
+  max-width: 1110px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .logo {
+  margin: 0;
+}
+
+.logo a {
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-.logo-text {
-  font-weight: 700;
-  font-size: 26px;
-  color: #3692ff;
-}
-
-.logo img {
-  width: 40px;
-  height: 40px;
 }
 
 .login-btn {
@@ -69,7 +63,8 @@ a {
 }
 
 .hero-inner {
-  width: 1110px;
+  max-width: 1110px;
+  width: 100%;
   height: 340px;
   display: flex;
   justify-content: space-between;
@@ -84,7 +79,7 @@ a {
   margin-bottom: 100px;
 }
 
-.hero-text h1 {
+.hero-text h2 {
   margin: 0;
   font-size: 40px;
   line-height: 56px;
@@ -123,7 +118,8 @@ a {
 }
 
 .card {
-  width: 988px;
+  max-width: 988px;
+  width: 100%;
   height: 444px;
   background: #fcfcfc;
   border-radius: 12px;
@@ -151,15 +147,12 @@ a {
 }
 
 .card-label {
-  font-family: 'Abhaya Libre ExtraBold', sans-serif;
   font-weight: 800;
   font-size: 18px;
-  line-height: 26px;
   color: #3692ff;
 }
 
 .card-content {
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -202,7 +195,8 @@ a {
 }
 
 .bottom-inner {
-  width: 1110px;
+  max-width: 1110px;
+  width: 100%;
   height: 397px;
   display: flex;
   align-items: center;
@@ -233,6 +227,7 @@ a {
 }
 
 .footer-inner {
-  width: 1120px;
+  max-width: 1110px;
+  width: 100%;
   height: 100%;
 }
