@@ -38,6 +38,14 @@ a.btn:hover,
     background-color:#1967D6
 }
 
+.user-page .page-wrap form .noti{
+    font-size: 14px;
+    font-weight: 600;
+    color:#F74747;
+    padding:0 12px;
+    position:absolute;
+    bottom: 16px;
+}
 a.btn:active{
     background-color:#1251AA;
 }
@@ -227,7 +235,7 @@ footer {
 
 /* 로그인/회원가입 폼 */
 
-.login-page,.signin-page{
+.login-page,.signup-page{
     display: flex;
     justify-content: center;
     margin: 90px 0;
@@ -248,7 +256,7 @@ footer {
 .user-page .page-wrap form{
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 0;
     width:100%;
 }
 
@@ -256,6 +264,8 @@ footer {
     display: flex;
     flex-direction: column;
     gap:16px;
+    position: relative;
+    padding-bottom: 40px;
 }
 
 .user-page .page-wrap form> div label{
@@ -264,7 +274,8 @@ footer {
     color:#1f1827;
 }
 .user-page .page-wrap form> div input[type='email'],
-.user-page .page-wrap form> div input[type='password']{
+.user-page .page-wrap form> div input[type='password'],
+.user-page .page-wrap form> div input[type='text']{
     border:none;
     background-color:#F3F4F6;
     border-radius: 12px;
@@ -285,14 +296,14 @@ footer {
     position:relative;
     cursor: pointer;
 }
-.user-page .page-wrap form .password-wrap:after{
-    content:'';
+.user-page .page-wrap form .password-wrap .password-toggle{
     display: block;
     width: 24px;
     height:24px;
     background-image:url(images/ic_password_view.svg);
     background-position:center;
     background-repeat:no-repeat;
+    background-color: transparent;
     background-size:100%;
     opacity: 0.7;
     position:absolute;
@@ -301,8 +312,11 @@ footer {
     margin-top: -12px;
     z-index: 10;
 }
+.user-page .page-wrap form .password-wrap .password-toggle.active{  
+    background-image:url(images/ic_password_view_active.svg);
+}
 
-.user-page .page-wrap form> input[type='button']{
+.user-page .page-wrap form button{
     border:none;
     background-color:var(--point-color);;
     border-radius: 40px;
@@ -312,7 +326,7 @@ footer {
     color:#fff;
     cursor: pointer;
 }
-.user-page .page-wrap form > input[type='button']:disabled {
+.user-page .page-wrap form  button:disabled {
 	background-color:#9CA3AF;
 	cursor:default;
 }
@@ -548,7 +562,7 @@ footer {
 
     /* 로그인/회원가입 폼 */
 
-    .login-page,.signin-page{
+    .login-page,.signup-page{
         margin: 64px 0 128px;
     }
 

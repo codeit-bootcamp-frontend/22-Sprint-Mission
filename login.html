@@ -1,59 +1,116 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Favicon 기본 -->
-    <link rel="icon" type="image/x-icon" href="https://panda-market.example/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_panda.svg">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://panda-market.example/favicon.ico"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon_panda.svg"
+    />
 
     <!-- iOS 홈화면용 -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_panda.svg">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon_panda.svg"
+    />
     <!-- 기본 메타 -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="판다마켓 로그인">
-    <meta property="og:description" content="일상의 모든 물건을 거래해보세요.">
-    <meta property="og:image" content="images/meta_thumb.png">
-    <meta property="og:url" content="https://panda-market.example">
-    <meta property="og:locale" content="ko_KR">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="판다마켓 로그인" />
+    <meta
+      property="og:description"
+      content="일상의 모든 물건을 거래해보세요."
+    />
+    <meta property="og:image" content="images/meta_thumb.png" />
+    <meta property="og:url" content="https://panda-market.example" />
+    <meta property="og:locale" content="ko_KR" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="판다마켓 로그인">
-    <meta name="twitter:description" content="일상의 모든 물건을 거래해보세요.">
-    <meta name="twitter:image" content="images/meta_thumb.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="판다마켓 로그인" />
+    <meta
+      name="twitter:description"
+      content="일상의 모든 물건을 거래해보세요."
+    />
+    <meta name="twitter:image" content="images/meta_thumb.png" />
 
     <title>판다마켓 로그인</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
-    
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+    />
+  </head>
+  <body>
     <main class="login-page user-page">
-        <div class="page-wrap">
-            <div class="logo"><a href="/"><img src="images/logo.svg" alt="판다마켓 로고"></a></div>
-            <form action="">
-                <div>
-                    <label for="login-email">이메일</label>
-                    <input type="email" id="login-email" placeholder="이메일을 입력해주세요.">
-                </div>
-                <div>
-                    <label for="login-password">비밀번호</label>
-                    <div class="password-wrap">
-                        <input type="password" id="login-password" placeholder="비밀번호를 입력해주세요.">
-                    </div>
-                </div>
-                <input type="button" value="로그인" disabled/>
-            </form>
-            <div class="easy-login-wrap">
-                <p>간편 로그인하기</p>
-                <a href="https://www.google.com/" target="_blank" class="btn-sns btn-sns-google">구글로 로그인하기</a>
-                <a href="https://www.kakaocorp.com/page/" target="_blank" class="btn-sns btn-sns-kakao">카카오톡으로 로그인하기</a>
-            </div>
-            <div class="for-new-user noti-box">
-                <p>판다마켓이 처음이신가요? <a href="signup.html">회원가입</a></p>
-            </div>
+      <div class="page-wrap">
+        <div class="logo">
+          <a href="/"><img src="images/logo.svg" alt="판다마켓 로고" /></a>
         </div>
+        <form action="">
+          <div>
+            <label for="login-email">이메일</label>
+            <input
+              type="email"
+              id="login-email"
+              class="input-email"
+              placeholder="이메일을 입력해주세요."
+            />
+            <p class="noti"></p>
+          </div>
+          <div>
+            <label for="login-password">비밀번호</label>
+            <div class="password-wrap">
+              <input
+                type="password"
+                id="login-password"
+                class="input-password"
+                placeholder="비밀번호를 입력해주세요."
+              />
+              <button type="button" class="password-toggle"></button>
+            </div>
+            <p class="noti"></p>
+          </div>
+          <button
+            id="btn-login"
+            type="button"
+            class="btn-signup-login"
+            onclick="location.href='items.html'"
+            disabled
+          >
+            로그인
+          </button>
+        </form>
+        <div class="easy-login-wrap">
+          <p>간편 로그인하기</p>
+          <a
+            href="https://www.google.com/"
+            target="_blank"
+            class="btn-sns btn-sns-google"
+            >구글로 로그인하기</a
+          >
+          <a
+            href="https://www.kakaocorp.com/page/"
+            target="_blank"
+            class="btn-sns btn-sns-kakao"
+            >카카오톡으로 로그인하기</a
+          >
+        </div>
+        <div class="for-new-user noti-box">
+          <p>판다마켓이 처음이신가요? <a href="signup.html">회원가입</a></p>
+        </div>
+      </div>
     </main>
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>

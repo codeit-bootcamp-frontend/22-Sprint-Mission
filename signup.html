@@ -27,31 +27,37 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
 <body>
-    <main class="signin-page user-page">
+    <main class="signup-page user-page">
         <div class="page-wrap">
             <div class="logo"><a href="/"><img src="images/logo.svg" alt="판다마켓 로고"></a></div>
             <form action="">
                 <div>
-                    <label for="signin-email">이메일</label>
-                    <input type="email" id="signin-email" placeholder="사용하실 이메일을 입력해주세요.">
+                    <label for="signup-email">이메일</label>
+                    <input type="email" id="signup-email" class="input-email" placeholder="사용하실 이메일을 입력해주세요.">
+                    <p class="noti"></p>
                 </div>
                 <div>
-                    <label for="signin-nickname">닉네임</label>
-                    <input type="email" id="signin-nickname" placeholder="사용하실 닉네임을 입력해주세요.">
+                    <label for="signup-nickname">닉네임</label>
+                    <input type="email" id="signup-nickname" placeholder="사용하실 닉네임을 입력해주세요.">
+                    <p class="noti"></p>
                 </div>
                 <div>
-                    <label for="signin-password">비밀번호</label>
+                    <label for="signup-password">비밀번호</label>
                     <div class="password-wrap">
-                        <input type="password" id="signin-password" placeholder="비밀번호를 입력해주세요.">
+                        <input type="password" id="signup-password" class="input-password" placeholder="비밀번호를 입력해주세요.">
+                        <button type="button" class="password-toggle"></button>
                     </div>
+                    <p class="noti"></p>
                 </div>
                 <div>
-                    <label for="signin-password-check">비밀번호 확인</label>
+                    <label for="signup-password-check">비밀번호 확인</label>
                     <div class="password-wrap">
-                        <input type="password" id="signin-password-check" placeholder="비밀번호를 확인 입력해주세요.">
+                        <input type="password" id="signup-password-check" class="signup-password-check" placeholder="비밀번호를 확인 입력해주세요.">
+                        <button type="button" class="password-toggle"></button>
                     </div>
+                    <p class="noti"></p>
                 </div>
-                <input type="button" value="회원가입" disabled/>
+                <button id="btn-signup" type="button" value="회원가입" class="btn-signup-login" onclick="location.href='login.html'" disabled>회원가입</button>
             </form>
             <div class="easy-login-wrap">
                 <p>간편 로그인하기</p>
@@ -63,5 +69,6 @@
             </div>
         </div>
     </main>
+    <script src="index.js"></script>
 </body>
 </html>
