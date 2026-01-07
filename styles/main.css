@@ -1,0 +1,197 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+/* 헤더 시작 */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1120px;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+
+.header {
+  padding: 0 400px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.login-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 128px;
+  height: 48px;
+  background-color: var(--primary-100);
+  color: var(--gray-100);
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 600px;
+}
+
+.logo-btn {
+  width: 153px;
+  height: 51px;
+}
+/* 헤더 끝 */
+
+/* 메인 시작 */
+.top-wrapper,
+.bottom-wrapper {
+  background-color: var(--bg-blue);
+  height: 540px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.top {
+  width: 1110px;
+  height: 340px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top div {
+  width: 357px;
+  height: 260px;
+  margin: 40px 0;
+}
+
+.top div > h2 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 140%;
+  padding: 0 62px 32px 0;
+  white-space: nowrap;
+}
+
+.market-btn {
+  background-color: var(--primary-100);
+  display: flex;
+  padding: 16px 124px;
+  border-radius: 40px;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 32px;
+  color: var(--gray-50);
+}
+
+.features {
+  margin-bottom: 138px;
+  background-color: var(--gray-50);
+}
+
+.feature-container {
+  padding: 138px 0;
+  background-color: var(--bg-white);
+  display: flex;
+  justify-content: center;
+}
+
+.feature {
+  width: 998px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--bg-gray);
+  margin: 0;
+}
+
+.hot-item {
+  padding: 103px 47.5px 103px 64px;
+}
+
+.search {
+  padding: 103px 64px 103px 38px;
+  text-align: end;
+}
+
+.register {
+  padding: 103px 17px 103px 57px;
+}
+
+.feature-content span {
+  color: var(--primary-100);
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.feature-content h2 {
+  margin: 12px 0 24px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 140%;
+  letter-spacing: 2%;
+  color: var(--gray-700);
+}
+
+.feature-content p {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--gray-700);
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.bottom {
+  width: 1110px;
+  height: 397px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom div > h2 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 140%;
+  padding: 112.5px 69px 172.5px 0;
+  white-space: nowrap;
+}
+/* 메인 끝 */
+
+/* 푸터 시작 */
+footer {
+  height: 160px;
+  background-color: var(--gray-900);
+  padding: 32px 108px;
+}
+
+.footer-box {
+  width: 1120px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.footer-box span {
+  color: var(--gray-400);
+  width: 112px;
+  height: 19px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.footer-links {
+  color: var(--gray-200);
+  font-weight: 400;
+  font-size: 16px;
+  display: flex;
+  gap: 30px;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 116px;
+  gap: 12px;
+}
+/* 푸터 끝 */
