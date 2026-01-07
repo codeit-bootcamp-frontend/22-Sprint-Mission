@@ -1,34 +1,55 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
 body {
     font-family : 'Pretendard';
     width : 100%;
     box-sizing: border-box;
 
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.container {
+    width: 100%;
+    max-width:1200px;
+    margin : 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 header {
     height : 70px;
+    width: 100%; 
     position: fixed; 
     top: 0;
     left: 0; 
-    width: 100%; 
     z-index: 1000; 
     border-bottom : solid 1px #DFDFDF;
     background-color: white;
-
-   
+    align-items: center;
+    display: flex;
+    align-items: center;
 }
+
 .headerbox {
-    position : absolute;
-    left : 50%;
-    transform: translateX(-50%);
-    width : 1120px;
-    height : 51px;
+    margin : 0 auto;   /* 피드백 반영 (position : absolute 에서 수정 ) */
+    width : 100%;
+    padding: 0 16px;
+    max-width: 1200px;
     display : flex;
     justify-content : space-between;
-    flex-direction : row;
     align-items : center;
-    padding : 9px 0;
-    
-
+   
+   
+ 
 }
 
 .headerbox-left > a > img {
@@ -51,23 +72,23 @@ header {
 
 }
 
+
+
+
+
+
+
 .explore-section {
     width : 100%;
-    height : 540px;
+    min-height : 540px;
     background-color : #CFE5FF;
-    position : relative;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 70px;
 }
 .explore-center {
-    display : flex;
-    flex-direction: row;
-    align-items: center;
-    height : 340px;
-    width: 1110px;
-    position : absolute;
-    top : 200px;
-    left : 50%;
-    transform: translateX(-50%);
-    gap: 7px;
+    max-width: 1110px;
+    justify-content: space-between;
     
 }
 
@@ -76,16 +97,12 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width : 357px;
-    height : 260px;
     padding-bottom : 60px;
     gap : 32px;
    
     
 }
 .explore-left-text {
-    width : 295px;
-    height : 112px;
     font-weight : 700;
     font-size : 40px;
     line-height : 140%;
@@ -114,45 +131,45 @@ header {
 
 
 main {
-    height : 3240px;
+    min-height:100vh;
     width : 100%;
 }
 
 .item {
       width : 100%;
-    height : 2160px;
+    
 }
 
 .item-check,.item-search, .item-register {
      width : 100%;
-    height : 720px;
+    min-height : 720px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 10px;
+    
+}
+
+.item-check-right p, .item-search-left p, .item-register-right p {
+    width: auto !important;  /* 고정된 width 해제 */
+    height: auto !important; /* 고정된 height 해제 */
+    line-height: 1.4;
 }
 .item-check-center {
     display : flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    width : 988px;
-    height : 444px;
+    max-width : 988px;
     gap: 64px;
-    padding: 0px;
-    background: #FCFCFC;
 }
 .item-check-left {
-    width : 579px;
-    height: 444px;
+    flex:1.5;
+    max-width:579px;
 }
 .item-check-right {
+    flex: 1;
     display:flex;
     flex-direction: column;
-    width : 298px;
-    padding-right : 24px;
-    
+    max-width : 350px;
+    gap: 10px;
+   
 }
 .item-check-right p:nth-child(1){
 font-family: 'Abhaya Libre ExtraBold';
@@ -194,21 +211,19 @@ color: #374151;
 
 
 .item-search-center {
-    display : flex;
-    flex-direction: row;
-    justify-content: center;
+    display:flex;
     align-items: center;
-    width : 988px;
-    height : 444px;
+    max-width : 988px;
+    justify-content:center;
     gap: 64px;
-    padding: 0px;
-    background: #FCFCFC;
+    width : 100%;
 }
 .item-search-left {
-      display:flex;
+    display: flex;
+    flex: 1;
     flex-direction: column;
-    width : 298px;
-    padding-right : 24px;
+    max-width : 350px;
+    gap:10px;
 }
 .item-search-left p:nth-child(1){
 font-family: 'Abhaya Libre ExtraBold';
@@ -248,32 +263,30 @@ color: #374151;
 }
 
 .item-search-right {
-    width : 579px;
-    height: 444px;
+    flex: 1.5;
+    max-width: 579px;
 }
 
 
 
 .item-register-center {
-    display : flex;
-    flex-direction: row;
+    display:flex;
     justify-content: center;
-    align-items: center;
-    width : 988px;
-    height : 444px;
+    align-items:center;
+    max-width : 988px;
     gap: 64px;
-    padding: 0px;
-    background: #FCFCFC;
+    width:100%;
 }
 .item-register-left {
-    width : 579px;
-    height: 444px;
+    flex:1.5;
+    max-width:579px;
 }
 .item-register-right {
-    display:flex;
+    flex: 1;
+    max-width: 350px;
+    display: flex;
     flex-direction: column;
-    width : 298px;
-    padding-right : 24px;
+    gap: 10px;
     
 }
 .item-register-right p:nth-child(1){
@@ -297,12 +310,9 @@ font-size: 40px;
 line-height: 140%;
 display: flex;
 align-items: center;
-width:222px;
-height:112px;
+
 }
 .item-register-right p:nth-child(3){
-    width: 274px;
-height: 64px;
 font-family: 'Pretendard';
 font-style: normal;
 font-weight: 500;
@@ -315,27 +325,18 @@ color: #374151;
 }
 
 .panda {
-position: relative;
 width: 100%;
-height: 540px;
-left: 0px;
-top: 0px;
+min-height:540px;
 background: #CFE5FF;
-margin-bottom : 0;
+display: flex;
+align-items: flex-end;
 }
 
 .panda-center {
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-gap: 69px;
-position: absolute;
-width: 1110px;
-height: 397px;
-left: calc(50% - 1110px/2);
-bottom: 0px;
+justify-content: space-between;
+max-width: 1110px;
 }
+
 .panda-left {
     font-family: 'Pretendard';
     font-style: normal;
@@ -359,24 +360,16 @@ bottom: 0px;
     height: 397px;
 
 }
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;  
+footer { 
     padding: 32px 0;
-    gap: 10px;
     background: #111827;
     width: 100%;    
-    
 }
 
 .footer-center {
-    width : 1120px;
-    height : 50px;
-    display : flex;
-    flex-direction: row;
+    max-width : 1120px;
     justify-content: space-between;
-    align-items: center;
+  
     
 }
 
@@ -398,4 +391,103 @@ footer {
 .fc-right {
     display : flex;
     gap : 10px;
+}
+
+
+
+
+
+
+/* 태블릿 사이즈 */
+@media (max-width: 1199px){
+    .container {
+        flex-direction: column;
+        text-align: center;
+      
+    }
+    .headerbox {
+        flex-direction: row; 
+        padding: 0 24px;
+     }
+    .fc-center{
+        gap: 30px;
+    }
+    .footer-center {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    
+   .item-search-center {
+        flex-direction: column-reverse; 
+        gap: 40px;
+    }
+    .item-check-right {
+        align-self: flex-start;  /* 박스 자체를 왼쪽 벽으로 */
+        text-align: left;                 
+        padding-left :24px;
+        width: 100%;
+    }
+    .item-search-left {
+        align-self: flex-end;    /* 박스 자체를 오른쪽 벽으로 */
+        text-align: right;     
+        width: 100%;
+        padding-right :24px;
+        align-items: flex-end;
+    }
+    .item-register-right {
+        align-self: flex-start;  /* 박스 자체를 왼쪽 벽으로 */
+        text-align: left;       
+        width: 100%;
+        padding-left :24px;
+    }
+}
+/* 모바일 사이즈 */
+@media (max-width: 767px){
+    .container {
+        padding: 0 16px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .headerbox {
+        flex-direction: row; 
+    
+    }
+    .footer-center {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .fc-center {
+        gap: 20px;
+    }
+    .explore-section, .item-check, .item-search, .item-register, .panda {
+        height: auto;
+        
+    }
+    .item-check-center, .item-search-center, .item-register-center {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .item-search-center {
+        flex-direction: column-reverse;
+    }
+    .item-check-right {
+        align-self: flex-start;  /* 박스 자체를 왼쪽 벽으로 */
+        text-align: left;                 
+        padding-left :24px;
+        width: 100%;
+    }
+    .item-search-left {
+        align-self: flex-end;    /* 박스 자체를 오른쪽 벽으로 */
+        text-align: right;     
+        width: 100%;
+        padding-right :24px;
+        align-items: flex-end
+    }
+    .item-register-right {
+        align-self: flex-start;  /* 박스 자체를 왼쪽 벽으로 */
+        text-align: left;       
+        width: 100%;
+        padding-left :24px;
+    }
 }

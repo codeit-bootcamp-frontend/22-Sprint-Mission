@@ -17,6 +17,10 @@
   align-items: center; 
  
 }
+.login-logo > img {
+  width : 100%;
+  height : 100%;
+}
 
 .login-form {
   width : 640px;
@@ -253,4 +257,55 @@ width: 640px;
   line-height: 17px;
   text-decoration-line: underline;
   color: #3692FF;
+}
+
+
+@media (max-width: 767px) {
+    .login-box {
+        width: calc(100% - 32px);
+        max-width: 400px;
+        margin: 60px auto;
+    }
+    .login-form, 
+    .login-formbox, 
+    .login-email, 
+    .login-nickname,        
+    .login-password, 
+    .login-password-right, 
+    .password-input,
+    .password-right-input, 
+    .login-button,
+    .login-easy, 
+    .login-easybox {
+        width: 100%;
+    }
+
+    .login-buttonbox {
+        width: 100% ;
+    }
+
+    .login-email input, 
+    .login-nickname input,       
+    .login-password input, 
+    .login-password-right input { 
+        width: 100%;
+    }
+    .login-easy {
+      box-sizing: border-box;
+      height: auto;
+    }
+
+    .login-logo {
+        width: 100%;
+        height: auto;
+    }
+    .login-logo img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+
+
+
 }
