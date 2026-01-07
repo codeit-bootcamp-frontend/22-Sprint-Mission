@@ -1,0 +1,87 @@
+
+@font-face {
+  font-family: 'ROKAFSansBold'; 
+  src: url('./fonts/ROKAF Sans Bold.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PretendardB'; 
+  src: url('./fonts/Pretendard-Bold.woff') format('woff'); 
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PretendardSB'; 
+  src: url('./fonts/Pretendard-SemiBold.woff') format('woff'); 
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PretendardM'; 
+  src: url('./fonts/Pretendard-Medium.woff') format('woff'); 
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PretendardR'; 
+  src: url('./fonts/Pretendard-Regular.woff') format('woff'); 
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AbhayaLibreEB'; 
+  src: url('./fonts/AbhayaLibre-ExtraBold.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img, video {
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+button { 
+  border: 0;
+  outline: none;
+}
+
+em {
+  font-style: normal;
+}
+
+body {
+  line-height: 1;
+  font-family: "PretendardM";
+  overflow-x: hidden;
+  font-size: 0;
+  width: 100%;
+}
+
+input, select {
+  border: none;
+  outline: none;
+}
+
+textarea {
+  outline: none;
+}
+
