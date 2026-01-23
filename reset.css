@@ -1,0 +1,120 @@
+/*
+  가장 많이 쓰이는 형태의 최소한의 리셋입니다.
+*/
+
+/* 변수 사용은 color: var(--gray-700);와 같이 사용합니다. */
+:root {
+  --primary-100: #3692ff;
+  --primary-200: #1967d6;
+  --primary-300: #1251aa;
+
+  --error: #f74747;
+  --bg-blue: #cfe5ff;
+  --bg-gray: #fcfcfc;
+  --bg-white: #ffffff;
+
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+}
+
+/* 스크린 리더용 텍스트 숨김 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* 박스 모델 통일 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 모든 태그의 여백 제거 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 기본 폰트 설정 및 렌더링 최적화 */
+body {
+  font-family: 'Pretendard Variable', Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 이미지 반응형 처리 */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 폼 요소 기본 폰트 상속 */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 버튼엔 손가락 커서 사용*/
+button {
+  cursor: pointer;
+}
+
+/* 링크 밑줄 제거 및 부모 색상 따라가기 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 긴 텍스트 자동 줄바꿈 처리 */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 단락 텍스트 줄바꿈 최적화 */
+p {
+  text-wrap: pretty;
+}
+
+/* 제목 텍스트 균형 있는 줄바꿈 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* 리스트 아이템 기본 스타일 제거 */
+li {
+  list-style: none;
+}
