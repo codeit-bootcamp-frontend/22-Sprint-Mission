@@ -217,7 +217,7 @@ footer {
     text-align: center;
   }
 
-  .hero-line-break {
+  .hero-line-break, .line-break {
     display: none;
   }
 
