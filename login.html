@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./login.css" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+  <script src="login.js" defer></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="login-box">
+    <div class="login-logo"><img src="./images/panda_market_logo.svg"></div>
+    <div class="login-form">
+    <form class="login-formbox">
+      <div class="login-email">
+      <p>이메일</p>
+      <input type="text" name="email" id="emailInput">
+      <p class="error-msg" id="emailErrorMsg">이메일을 입력해주세요.</p>
+      </div>
+      <div class="login-password">
+      <p>비밀번호</p>
+      <div class="password-input">
+      <input type="password" name="password" id="passwordInput">
+      <img src="./icon/btn_visibility_on_24px.png">
+      </div>
+      <p class="error-msg" id="passwordErrorMsg"></p>
+      </div>
+      <div class="login-buttonbox">
+      <button class="login-button">로그인</button>
+      </div>
+    </form>
+
+      <div class="login-easy">
+        <div class="login-easybox">
+          <div class="login-easy-left"><p>간편 로그인하기</p></div>
+          <div class="login-easy-right">
+            <img src="./icon/logo_google.png">
+            <img src="./icon/logo_kakao.png">
+          </div>
+        </div>
+      </div>
+      
+      <div class="login-footer"><p>판다마켓이 처음이신가요?</p><a href="/signup.html">회원가입</a></div>
+    
+    </div>
+  </div>
+
+
+</body>
+</html>
