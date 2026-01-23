@@ -42,13 +42,40 @@ header {
 .auth-form__input {
   width: 100%;
   height: 56px;
-  padding: 16px;
-  border: none;
+  padding: 15px 24px;
+  border: 1px solid var(--gray100);
   border-radius: 12px;
   background: var(--gray100);
-  color: var(--gray800);
-  font-size: 16px;
   line-height: 1.5;
+}
+
+.auth-form__password .auth-form__input {
+  padding-right: 48px;
+}
+
+.auth-form__field.error .auth-form__input {
+  border: 1px solid var(--error);
+}
+
+.auth-form__field.success .auth-form__input {
+  border: 1px solid var(--blue);
+}
+
+.auth-form__input::placeholder {
+  color: var(--gray400);
+  font-size: 16px;
+}
+
+.auth-form__error-message {
+  display: none;
+  margin: 8px 0 0 16px;
+  color: var(--error);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.auth-form__field.error .auth-form__error-message {
+  display: block;
 }
 
 .auth-form__password {
@@ -62,21 +89,18 @@ header {
   width: 24px;
   height: 24px;
   border: none;
+  background: url("/img/btn_visibility_off.svg") no-repeat center center;
   transform: translateY(-50%);
   cursor: pointer;
 }
 
-.auth-form__btn-visibility--on {
+.auth-form__btn-visibility.on {
   background: url("/img/btn_visibility_on.svg") no-repeat center center;
-}
-
-.auth-form__btn-visibility--off {
-  background: url("/img/btn_visibility_off.svg") no-repeat center center;
 }
 
 .auth-form__submit-btn {
   height: 56px;
-  background: var(--blue);
+  background: var(--gray400);
   border: none;
   border-radius: 9999px;
   color: var(--gray100);
@@ -84,6 +108,12 @@ header {
   font-weight: 600;
   line-height: 1.6;
   cursor: pointer;
+  pointer-events: none;
+}
+
+.auth-form__submit-btn.active {
+  background: var(--blue);
+  pointer-events: auto;
 }
 
 .auth-simple-login {
@@ -124,4 +154,28 @@ header {
 
 .auth-extra__link {
   color: var(--blue);
+}
+
+/* Tablet */
+@media (max-width: 1199px) {
+  .auth-container {
+    padding: 0 52px;
+    box-sizing: content-box;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .auth-container {
+    padding: 0 16px;
+    max-width: 400px;
+  }
+
+  .header__logo {
+    width: 198px;
+  }
+
+  .auth-form__label {
+    font-size: 14px;
+  }
 }

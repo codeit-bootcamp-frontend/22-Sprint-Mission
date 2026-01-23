@@ -3,7 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>판다마켓</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="판다 마켓" />
+    <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta property="og:image" content="https://example.com/og-image.jpg" />
+    <meta property="og:url" content="https://example.com/page" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="판다 마켓" />
+    <meta
+      name="twitter:description"
+      content="일상의 모든 물건을 거래해보세요"
+    />
+    <meta name="twitter:image" content="https://example.com/og-image.jpg" />
+    <title>판다 마켓</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/reset-css/reset.css"
@@ -16,7 +28,11 @@
       <nav class="nav-bar">
         <h1>
           <a href="/" class="nav-bar__logo">
-            <img src="img/logo.svg" alt="판다마켓" />
+            <picture>
+              <source srcset="img/logo_mobile.svg" media="(max-width: 767px)" />
+              <source srcset="img/logo.svg" media="(min-width: 768px)" />
+              <img src="img/logo.svg" alt="판다마켓" />
+            </picture>
           </a>
         </h1>
         <a href="/login/" class="nav-bar__btn">로그인</a>
@@ -27,11 +43,21 @@
       <section class="hero top">
         <div class="hero__wrap">
           <div class="hero__content">
-            <h2>일상의 모든 물건을<br />거래해 보세요</h2>
+            <h2>일상의 모든 물건을 <br class="pc-br m-br" />거래해 보세요</h2>
             <a href="/items/" class="hero__content-btn">구경하러 가기</a>
           </div>
           <div class="hero__img">
-            <img src="img/img_home_top.png" alt="" />
+            <picture>
+              <source
+                srcset="img/img_home_top_mobile.svg"
+                media="(max-width: 767px)"
+              />
+              <source
+                srcset="img/img_home_top.svg"
+                media="(min-width: 768px)"
+              />
+              <img src="img/img_home_top.svg" alt="" />
+            </picture>
           </div>
         </div>
       </section>
@@ -45,7 +71,7 @@
               </div>
               <div class="intro__item-content">
                 <p class="intro__item-content-subtitle">Hot item</p>
-                <h2>인기 상품을<br />확인해 보세요</h2>
+                <h2>인기 상품을 <br class="pc-br" />확인해 보세요</h2>
                 <p class="intro__item-content-text">
                   가장 HOT한 중고거래 물품을<br />판다 마켓에서 확인해 보세요
                 </p>
@@ -59,7 +85,7 @@
               </div>
               <div class="intro__item-content">
                 <p class="intro__item-content-subtitle">Search</p>
-                <h2>구매를 원하는<br />상품을 검색하세요</h2>
+                <h2>구매를 원하는 <br class="pc-br" />상품을 검색하세요</h2>
                 <p class="intro__item-content-text">
                   구매하고 싶은 물품은 검색해서<br />쉽게 찾아보세요
                 </p>
@@ -73,11 +99,9 @@
               </div>
               <div class="intro__item-content">
                 <p class="intro__item-content-subtitle">Register</p>
-                <h2>판매를 원하는<br />상품을 등록하세요</h2>
+                <h2>판매를 원하는 <br class="pc-br" />상품을 등록하세요</h2>
                 <p class="intro__item-content-text">
-                  어떤 물건이든 판매하고 싶은 <br class="m-br" />상품을<br
-                    class="pc-br"
-                  />
+                  어떤 물건이든 판매하고 싶은 상품을<br />
                   쉽게 등록하세요
                 </p>
               </div>
