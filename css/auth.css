@@ -3,7 +3,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  gap: 40px;
 }
 .auth-container {
   display: flex;
@@ -99,4 +98,16 @@ body {
 .auth-container .helper-text p a {
   color: var(--primary-color-100);
   text-decoration: underline;
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1199px) {
+}
+
+/* Mobile */
+
+@media (min-width: 375px) and (max-width: 767px) {
+  body {
+    padding: 0 16px;
+  }
 }
