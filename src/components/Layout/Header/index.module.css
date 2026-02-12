@@ -1,0 +1,42 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+.headerWrap {
+  max-width: 1200px;
+  padding: 8px 40px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  overflow: hidden;
+  position: relative;
+}
+.headerlogo {
+  height: 51px;
+}
+.btn {
+  padding: 12px 42px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  display: block;
+}
+@media (max-width: 1080px) {
+  .headerWrap {
+    padding: 8px 24px;
+  }
+}
+@media (max-width: 767px) {
+  .headerlogo {
+    position: relative;
+    left: -50px;
+  }
+}

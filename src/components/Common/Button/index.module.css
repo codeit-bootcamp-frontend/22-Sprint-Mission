@@ -1,0 +1,27 @@
+.btn {
+  transition: 0.3s;
+}
+.primary {
+  color: #fff;
+  background-color: #3692ff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 16px;
+}
+.primary:hover {
+  background-color: #1967d6;
+}
+
+.btnL {
+  border-radius: 9999px;
+  min-width: 128px;
+  min-height: 48px;
+  max-width: 357px;
+  width: 100%;
+}
+
+.btnM {
+}
+.btnS {
+  border-radius: 5px;
+}

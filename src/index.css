@@ -1,0 +1,46 @@
+/* 마지막 수정 날짜 : 25.12.09 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    'Pretendard Variable',
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    'Helvetica Neue',
+    'Segoe UI',
+    'Apple SD Gothic Neo',
+    'Noto Sans KR',
+    'Malgun Gothic',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    sans-serif;
+}
+
+:root {
+  --big-txt-size: 40px;
+  --point-color: #3692ff;
+  --font-color: #374151;
+}
+
+img {
+  display: block;
+  object-fit: contain;
+  width: 100%;
+}
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  color: inherit;
+}
