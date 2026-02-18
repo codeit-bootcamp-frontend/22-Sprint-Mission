@@ -3,6 +3,7 @@ import Layout from '@/components/Layout/MainLayout';
 import Home from '@/pages/Home';
 import Login from '@/pages/Login';
 import List from '@/pages/List';
+import SignIn from '@/pages/SignIn';
 
 export default function AppRoutes() {
   return (
@@ -11,6 +12,7 @@ export default function AppRoutes() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signIn" element={<SignIn />} />
           <Route path="/item" element={<List />} />
         </Route>
       </Routes>

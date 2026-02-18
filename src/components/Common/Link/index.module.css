@@ -1,0 +1,8 @@
+.linkto {
+  color: inherit;
+}
+.loginButton,
+.signInButton {
+  color: var(--point-color);
+  text-decoration: underline;
+}

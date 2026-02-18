@@ -8,7 +8,7 @@
   font-weight: 600;
   padding: 8px 16px;
 }
-.primary:hover {
+.primary:not(:disabled):hover {
   background-color: #1967d6;
 }
 
@@ -24,4 +24,40 @@
 }
 .btnS {
   border-radius: 5px;
+}
+
+.txtBtn {
+  color: red;
+}
+
+.btnLogin,
+.btnsignup {
+  border: none;
+  background-color: var(--point-color);
+  border-radius: 40px;
+  height: 56px;
+  padding: 12px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.passwordToggle {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url(@/assets/ic_password_view.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: 100%;
+  opacity: 0.7;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  margin-top: -12px;
+  z-index: 10;
+}
+.active {
+  background-image: url(@/assets/ic_password_view_active.svg);
 }

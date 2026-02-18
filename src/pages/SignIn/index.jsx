@@ -1,13 +1,13 @@
 import LogoImage from '@/assets/logo.svg';
 import Input from '@/components/Common/Input';
-import Button from '@/components/Common/Button';
 import PasswordInput from '@/components/Common/PasswordInput';
+import Button from '@/components/Common/Button';
 import Link from '@/components/Common/Link';
-import { useState } from 'react';
 import styles from './index.module.css';
 import cn from 'classnames';
+import { useState } from 'react';
 
-function Login() {
+function SignIn() {
   const [mailValue, setMailValue] = useState('');
   const [isMailValid, setIsMailValid] = useState(false);
   const [mailMessage, setMailMessage] = useState('');
@@ -55,11 +55,8 @@ function Login() {
       setPasswordMessage('비밀번호를 입력해주세요.');
     }
   };
-
-  const isFormValid = isMailValid && isPasswordValid;
-
   return (
-    <div className={cn(styles.pageWrap, styles.loginPage)}>
+    <div className={cn(styles.pageWrap, styles.signInPage)}>
       <div className={styles.logo}>
         <a href="/">
           <img
@@ -71,22 +68,31 @@ function Login() {
       </div>
       <form action="" className={styles.formBox}>
         <div>
-          <label htmlFor="loginEmail" className={styles.label}>
+          <label htmlFor="login-email" className={styles.label}>
             이메일
           </label>
           <Input
             type="email"
-            id="loginEmail"
+            id="login-email"
             className={styles.inputEmail}
             placeholder="이메일을 입력해주세요."
-            onChange={handleMailChange}
-            onBlur={handleBlur}
-            error={mailValue && !isMailValid}
           />
           {mailMessage && <p className={styles.alert}>{mailMessage}</p>}
         </div>
         <div>
-          <label htmlFor="loginPassword" className={styles.label}>
+          <label htmlFor="login-email" className={styles.label}>
+            닉네임
+          </label>
+          <Input
+            type="text"
+            id="login-nickname"
+            className={styles.inputNickname}
+            placeholder="닉네임을 입력해주세요."
+          />
+          <p className={styles.noti}></p>
+        </div>
+        <div>
+          <label htmlFor="login-password" className={styles.label}>
             비밀번호
           </label>
           <div className={styles.passwordWrap}>
@@ -102,14 +108,30 @@ function Login() {
           </div>
           {passwordMessage && <p className={styles.alert}>{passwordMessage}</p>}
         </div>
+        <div>
+          <label htmlFor="login-confirm-password" className={styles.label}>
+            비밀번호 확인
+          </label>
+          <div className={styles.passwordWrap}>
+            <PasswordInput
+              type="password"
+              id="loginPassword"
+              className={styles.inputPassword}
+              placeholder="비밀번호를 다시 한번 입력해주세요."
+              onChange={handlePasswordChange}
+              onBlur={handleBlur}
+              error={passwordValue && !isPasswordValid}
+            />
+          </div>
+          <p className={styles.noti}></p>
+        </div>
         <Button
-          id="btnLogin"
-          type="submit"
-          className="primary btnLogin"
-          active={true}
-          disabled={!isFormValid}
+          id="btnlogin"
+          type="button"
+          className="primary btnsignup"
+          disabled
         >
-          로그인
+          회원 가입
         </Button>
       </form>
       <div className={styles.easyLoginWrap}>
@@ -131,9 +153,9 @@ function Login() {
       </div>
       <div className={cn(styles.forNewUser, styles.notiBox)}>
         <p>
-          판다마켓이 처음이신가요?{' '}
-          <Link to="/signIn" className="signInButton">
-            회원가입
+          이미 회원이신가요?{' '}
+          <Link to="/login" className="loginButton">
+            로그인
           </Link>
         </p>
       </div>
@@ -141,4 +163,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignIn;
