@@ -16,17 +16,25 @@
 .formBox {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 16px;
   width: 100%;
+  position: relative;
 }
 
-.formBox div {
+.formBox > div {
   display: flex;
   flex-direction: column;
   gap: 16px;
   position: relative;
+  padding-bottom: 28px;
 }
-
+.alert {
+  position: absolute;
+  left: 16px;
+  bottom: 0;
+  font-size: 14px;
+  color: #f74747;
+}
 .label {
   font-size: 18px;
   font-weight: 700;
@@ -79,9 +87,4 @@ a.btnSnsKakao {
   font-size: 14px;
   color: #1f1837;
   font-weight: 500;
-}
-
-.user-page .page-wrap .noti-box p a {
-  color: var(--point-color);
-  text-decoration: underline;
 }

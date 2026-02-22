@@ -42,6 +42,12 @@
   cursor: pointer;
   margin-top: 8px;
 }
+
+.btnLogin:disabled,
+.btnsignup:disabled {
+  background-color: #aaa;
+}
+
 .passwordToggle {
   display: block;
   width: 24px;

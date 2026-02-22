@@ -20,10 +20,8 @@ function Login() {
 
     if (emailRegex.test(v)) {
       setIsMailValid(true);
-      setMailMessage('');
     } else {
       setIsMailValid(false);
-      setMailMessage('이메일이 올바르지 않습니다.');
     }
   };
 
@@ -43,17 +41,36 @@ function Login() {
       setPasswordMessage('비밀번호는 8글자 이상 입력해주세요.');
     }
   };
-  const handleBlur = () => {
-    if (!mailValue) {
+  const handleMailBlur = (e) => {
+    const v = e.target.value;
+
+    if (!v) {
       setIsMailValid(false);
       setMailMessage('이메일을 입력해주세요.');
-      setPasswordMessage('');
+      return;
     }
-    if (!passwordValue) {
+
+    if (!emailRegex.test(v)) {
+      setIsMailValid(false);
+      setMailMessage('이메일 형식이 올바르지 않습니다.');
+      return;
+    }
+
+    setIsMailValid(true);
+    setMailMessage('');
+  };
+
+  const handlePasswordBlur = (e) => {
+    const v = e.target.value;
+
+    if (!v) {
       setIsPasswordValid(false);
-      setMailMessage('');
       setPasswordMessage('비밀번호를 입력해주세요.');
+      return;
     }
+
+    setIsPasswordValid(true);
+    setPasswordMessage('');
   };
 
   const isFormValid = isMailValid && isPasswordValid;
@@ -80,7 +97,7 @@ function Login() {
             className={styles.inputEmail}
             placeholder="이메일을 입력해주세요."
             onChange={handleMailChange}
-            onBlur={handleBlur}
+            onBlur={handleMailBlur}
             error={mailValue && !isMailValid}
           />
           {mailMessage && <p className={styles.alert}>{mailMessage}</p>}
@@ -96,7 +113,7 @@ function Login() {
               className={styles.inputPassword}
               placeholder="비밀번호를 입력해주세요."
               onChange={handlePasswordChange}
-              onBlur={handleBlur}
+              onBlur={handlePasswordBlur}
               error={passwordValue && !isPasswordValid}
             />
           </div>

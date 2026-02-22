@@ -12,6 +12,17 @@ function SignIn() {
   const [isMailValid, setIsMailValid] = useState(false);
   const [mailMessage, setMailMessage] = useState('');
 
+  const [nicknameValue, setNicknameValue] = useState('');
+  const [isNicknameValid, setIsNicknameValid] = useState(false);
+  const [nicknameMessage, setNicknameMessage] = useState('');
+
+  const [passwordValue, setPasswordValue] = useState('');
+  const [isPasswordValid, setIsPasswordValid] = useState(false);
+  const [passwordMessage, setPasswordMessage] = useState('');
+
+  const [isPasswordCheckValid, setIsPasswordCheckValid] = useState(false);
+  const [passwordCheckMessage, setPasswordCheckMessage] = useState('');
+
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const handleMailChange = (e) => {
@@ -20,16 +31,10 @@ function SignIn() {
 
     if (emailRegex.test(v)) {
       setIsMailValid(true);
-      setMailMessage('');
     } else {
       setIsMailValid(false);
-      setMailMessage('이메일이 올바르지 않습니다.');
     }
   };
-
-  const [passwordValue, setPasswordValue] = useState('');
-  const [isPasswordValid, setIsPasswordValid] = useState(false);
-  const [passwordMessage, setPasswordMessage] = useState('');
 
   const handlePasswordChange = (e) => {
     const v = e.target.value;
@@ -43,18 +48,71 @@ function SignIn() {
       setPasswordMessage('비밀번호는 8글자 이상 입력해주세요.');
     }
   };
-  const handleBlur = () => {
-    if (!mailValue) {
+  const handleMailBlur = (e) => {
+    const v = e.target.value;
+
+    if (!v) {
       setIsMailValid(false);
       setMailMessage('이메일을 입력해주세요.');
-      setPasswordMessage('');
+      return;
     }
-    if (!passwordValue) {
-      setIsPasswordValid(false);
-      setMailMessage('');
-      setPasswordMessage('비밀번호를 입력해주세요.');
+
+    if (!emailRegex.test(v)) {
+      setIsMailValid(false);
+      setMailMessage('이메일 형식이 올바르지 않습니다.');
+      return;
     }
+
+    setIsMailValid(true);
+    setMailMessage('');
   };
+  const handleNicknameBlur = (e) => {
+    const v = e.target.value;
+
+    if (!v) {
+      setIsNicknameValid(false);
+      setNicknameMessage('닉네임을 입력해주세요.');
+      return;
+    }
+    setIsNicknameValid(true);
+    setNicknameMessage('');
+  };
+  const handlePasswordBlur = (e) => {
+    const v = e.target.value;
+
+    if (!v) {
+      setIsPasswordValid(false);
+      setPasswordMessage('비밀번호를 입력해주세요.');
+      return;
+    }
+
+    if (v.length < 8) {
+      setIsPasswordValid(false);
+      setPasswordMessage('비밀번호는 8글자 이상 입력해주세요.');
+      return;
+    }
+
+    setIsPasswordValid(true);
+    setPasswordMessage('');
+  };
+
+  const handlePasswordCheckBlur = (e) => {
+    const v = e.target.value;
+
+    console.log('password', passwordValue);
+    if (v !== passwordValue) {
+      setIsPasswordCheckValid(false);
+      setPasswordCheckMessage('비밀번호가 일치하지 않습니다.');
+      return;
+    }
+
+    setIsPasswordCheckValid(true);
+    setPasswordCheckMessage('');
+  };
+
+  const isFormValid =
+    isMailValid && isNicknameValid && isPasswordValid && isPasswordCheckValid;
+
   return (
     <div className={cn(styles.pageWrap, styles.signInPage)}>
       <div className={styles.logo}>
@@ -73,9 +131,12 @@ function SignIn() {
           </label>
           <Input
             type="email"
-            id="login-email"
+            id="loginEmail"
             className={styles.inputEmail}
             placeholder="이메일을 입력해주세요."
+            onChange={handleMailChange}
+            onBlur={handleMailBlur}
+            error={mailValue && !isMailValid}
           />
           {mailMessage && <p className={styles.alert}>{mailMessage}</p>}
         </div>
@@ -87,9 +148,11 @@ function SignIn() {
             type="text"
             id="login-nickname"
             className={styles.inputNickname}
+            onBlur={handleNicknameBlur}
             placeholder="닉네임을 입력해주세요."
+            error={nicknameValue && !isNicknameValid}
           />
-          <p className={styles.noti}></p>
+          {nicknameMessage && <p className={styles.alert}>{nicknameMessage}</p>}
         </div>
         <div>
           <label htmlFor="login-password" className={styles.label}>
@@ -102,7 +165,7 @@ function SignIn() {
               className={styles.inputPassword}
               placeholder="비밀번호를 입력해주세요."
               onChange={handlePasswordChange}
-              onBlur={handleBlur}
+              onBlur={handlePasswordBlur}
               error={passwordValue && !isPasswordValid}
             />
           </div>
@@ -115,21 +178,22 @@ function SignIn() {
           <div className={styles.passwordWrap}>
             <PasswordInput
               type="password"
-              id="loginPassword"
+              id="loginCheckPassword"
               className={styles.inputPassword}
               placeholder="비밀번호를 다시 한번 입력해주세요."
-              onChange={handlePasswordChange}
-              onBlur={handleBlur}
+              onBlur={handlePasswordCheckBlur}
               error={passwordValue && !isPasswordValid}
             />
           </div>
-          <p className={styles.noti}></p>
+          {passwordCheckMessage && (
+            <p className={styles.alert}>{passwordCheckMessage}</p>
+          )}
         </div>
         <Button
           id="btnlogin"
           type="button"
           className="primary btnsignup"
-          disabled
+          disabled={!isFormValid}
         >
           회원 가입
         </Button>
