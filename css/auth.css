@@ -27,18 +27,32 @@ body {
 .input-field {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-
   font-weight: 700;
   font-size: 18px;
   line-height: 1.4;
 }
 .input-field input {
+  margin: 16px 0 8px;
   background-color: var(--secondary-grey-color-100);
   padding-left: 24px;
   width: 100%;
   height: 56px;
   border-radius: 12px;
+  border: 1px solid transparent;
+}
+.input-field input.error {
+  border: 1px solid var(--error-red-color);
+}
+.input-field .errorMsg {
+  display: none;
+  padding-left: 16px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--error-red-color);
+}
+.input-field .errorMsg.active {
+  display: block;
 }
 .password-container {
   position: relative;
@@ -50,18 +64,21 @@ body {
   position: absolute;
   top: 50%;
   right: 24px;
-  transform: translateY(-50%);
+  transform: translateY(-37%);
 }
 .auth-form .submit-btn {
   padding: 16px 0;
   text-align: center;
   width: 100%;
-  background-color: var(--primary-color-100);
+  background-color: var(--secondary-grey-color-400);
   color: #fff;
   border-radius: 40px;
   font-weight: 600;
   font-size: 20px;
   line-height: 1.6;
+}
+.auth-form .submit-btn.active {
+  background-color: var(--primary-color-100);
 }
 .auth-container .short-cut {
   display: flex;

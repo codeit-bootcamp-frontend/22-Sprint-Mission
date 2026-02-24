@@ -16,7 +16,7 @@
       content="https://fe22-sprintmission-pandamarket.netlify.app/"
     />
     <!-- CSS -->
-    <link rel="stylesheet" href="css/reset-min.css" />
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/auth.css" />
     <link
@@ -37,7 +37,8 @@
       <form class="auth-form">
         <div class="input-field">
           <label for="email" class="title">이메일</label>
-          <input type="text" id="email" placeholder="아이디 또는 이메일" />
+          <input type="email" id="email" placeholder="아이디 또는 이메일" />
+          <span class="errorMsg"></span>
         </div>
         <div class="input-field">
           <label for="password" class="title">비밀번호</label>
@@ -50,6 +51,7 @@
               />
             </button>
           </div>
+          <span class="errorMsg"></span>
         </div>
         <button type="submit" class="submit-btn">로그인</button>
       </form>
