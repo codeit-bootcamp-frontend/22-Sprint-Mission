@@ -1,5 +1,5 @@
 import LogoImage from '@/assets/logo.svg';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styles from './index.module.css';
 import Button from '@/components/Common/Button';
 
@@ -16,6 +16,25 @@ function Header() {
             />
           </Link>
         </h1>
+        <div className={styles.menuWrap}>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? `${styles.menu} ${styles.active}` : styles.menu
+            }
+            to="/"
+          >
+            자유게시판
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? `${styles.menu} ${styles.active}` : styles.menu
+            }
+            to="/items"
+            exact
+          >
+            중고마켓
+          </NavLink>
+        </div>
         <Button className="primary btnS">
           <Link to="/login">로그인</Link>
         </Button>

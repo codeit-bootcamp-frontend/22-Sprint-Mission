@@ -44,3 +44,8 @@ a {
   cursor: pointer;
   color: inherit;
 }
+ol,
+ul,
+li {
+  list-style: none;
+}

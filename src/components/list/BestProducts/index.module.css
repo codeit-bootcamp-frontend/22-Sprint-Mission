@@ -1,0 +1,14 @@
+.bestProduct {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.productsWrap {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.product {
+  width: calc(25% - 16px);
+}

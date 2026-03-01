@@ -5,6 +5,7 @@
   right: 0;
   background-color: #fff;
   border-bottom: 1px solid #eee;
+  z-index: 100;
 }
 .headerWrap {
   max-width: 1200px;
@@ -13,6 +14,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 24px;
 }
 .logo {
   overflow: hidden;
@@ -20,6 +22,19 @@
 }
 .headerlogo {
   height: 51px;
+}
+.menuWrap {
+  display: flex;
+  flex-grow: 1;
+}
+.menu {
+  padding: 12px 16px;
+  font-size: 18px;
+  color: #4b5563;
+  font-weight: 700;
+}
+.menu.active {
+  color: #3692ff;
 }
 .btn {
   padding: 12px 42px;

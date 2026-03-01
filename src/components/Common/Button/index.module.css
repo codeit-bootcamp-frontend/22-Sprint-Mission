@@ -1,5 +1,6 @@
 .btn {
   transition: 0.3s;
+  white-space: nowrap;
 }
 .primary {
   color: #fff;
@@ -21,6 +22,9 @@
 }
 
 .btnM {
+  border-radius: 8px;
+  height: 42px;
+  padding: 12px 24px;
 }
 .btnS {
   border-radius: 5px;
@@ -66,4 +70,38 @@
 }
 .active {
   background-image: url(@/assets/ic_password_view_active.svg);
+}
+
+.dropdown {
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 130px;
+}
+
+.dropdown span {
+  color: #1f2937;
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.dropdown img {
+  width: 16px;
+}
+
+.dropdownItem {
+  padding: 12px 25px;
+  text-align: center;
+  width: 100%;
+  font-size: 16px;
+  color: #1f2937;
+  font-weight: 400;
+}
+
+.dropdownItem + .dropdownItem {
+  border-top: 1px solid #e5e7eb;
 }
