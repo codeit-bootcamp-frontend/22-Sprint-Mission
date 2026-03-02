@@ -55,3 +55,8 @@
     left: -50px;
   }
 }
+@media (max-width: 480px) {
+  .menuWrap {
+    display: none;
+  }
+}

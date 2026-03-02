@@ -4,6 +4,7 @@ import Home from '@/pages/Home';
 import Login from '@/pages/Login';
 import List from '@/pages/List';
 import SignIn from '@/pages/SignIn';
+import AddItem from '@/pages/AddItem';
 
 export default function AppRoutes() {
   return (
@@ -14,6 +15,7 @@ export default function AppRoutes() {
           <Route path="/login" element={<Login />} />
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/items" element={<List />} />
+          <Route path="/additem" element={<AddItem />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -39,3 +39,31 @@
 .product {
   width: calc(20% - 19.5px);
 }
+@media (max-width: 768px) {
+  .product {
+    width: calc(50% - 12px);
+  }
+  .productListTop {
+    flex-direction: column;
+  }
+  .productListTop h2 {
+    text-align: left;
+    width: 100%;
+  }
+  .listOptions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 480px) {
+  .listOptions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .productsWrap {
+    flex-direction: column;
+  }
+  .product {
+    width: calc(100%);
+  }
+}

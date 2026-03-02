@@ -7,6 +7,12 @@ import { useEffect, useState } from 'react';
 function BestProduct() {
   const [products, setProducts] = useState([]);
 
+  const getLimitByWindowWidth = () => {
+    const width = window.innerWidth;
+    if (width >= 769) return 4;
+    if (width >= 481) return 2;
+    return 1;
+  };
   useEffect(() => {
     async function fetchProducts() {
       try {
@@ -15,8 +21,9 @@ function BestProduct() {
         const sorted = likeArr.sort((a, b) => {
           return b.favoriteCount - a.favoriteCount;
         });
-        const top4 = sorted.slice(0, 4);
-        setProducts(top4 ?? []);
+        const limit = getLimitByWindowWidth();
+        const topN = sorted.slice(0, limit);
+        setProducts(topN ?? []);
       } catch (error) {
         console.error('Failed to fetch recipients:', error);
       }

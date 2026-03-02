@@ -2,7 +2,7 @@ import LogoImage from '@/assets/logo.svg';
 import Input from '@/components/Common/Input';
 import PasswordInput from '@/components/Common/PasswordInput';
 import Button from '@/components/Common/Button';
-import Link from '@/components/Common/Link';
+import LinkTo from '@/components/Common/LinkTo';
 import styles from './index.module.css';
 import cn from 'classnames';
 import { useState } from 'react';
@@ -218,9 +218,9 @@ function SignIn() {
       <div className={cn(styles.forNewUser, styles.notiBox)}>
         <p>
           이미 회원이신가요?{' '}
-          <Link to="/login" className="loginButton">
+          <LinkTo to="/login" className="loginButton">
             로그인
-          </Link>
+          </LinkTo>
         </p>
       </div>
     </div>

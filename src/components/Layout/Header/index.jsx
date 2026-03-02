@@ -30,7 +30,6 @@ function Header() {
               isActive ? `${styles.menu} ${styles.active}` : styles.menu
             }
             to="/items"
-            exact
           >
             중고마켓
           </NavLink>

@@ -19,7 +19,7 @@ function Home() {
               거래해 보세요
             </p>
             <Button className="primary btnL">
-              <Link className={styles.btn} to="/item">
+              <Link className={styles.btn} to="/items">
                 구경하러 가기
               </Link>
             </Button>
