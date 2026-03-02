@@ -1,0 +1,90 @@
+.signInPage {
+  display: flex;
+  justify-content: center;
+  margin: 90px auto;
+  max-width: 688px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.LogoImage {
+  height: 132px;
+}
+.formBox {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  position: relative;
+}
+
+.formBox > div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  padding-bottom: 28px;
+}
+.alert {
+  position: absolute;
+  left: 16px;
+  bottom: 0;
+  font-size: 14px;
+  color: #f74747;
+}
+.label {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f1827;
+}
+
+.passwordWrap {
+  position: relative;
+  cursor: pointer;
+}
+
+.easyLoginWrap {
+  display: flex;
+  gap: 16px;
+  background-color: #e6f2ff;
+  border-radius: 8px;
+  padding: 16px 24px;
+  flex-direction: row;
+  align-items: center;
+}
+.easyLoginWrapTxt {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1f2937;
+}
+a.btnSns {
+  display: block;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 0.1px;
+  text-indent: -999em;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+a.btnSnsGoogle {
+  background-color: #fff;
+  background-image: url(@/assets/ic_google.svg);
+}
+a.btnSnsKakao {
+  background-color: #f5e14b;
+  background-image: url(@/assets/ic_kakao.svg);
+}
+.notiBox {
+  text-align: center;
+}
+
+.notiBox p {
+  font-size: 14px;
+  color: #1f1837;
+  font-weight: 500;
+}
