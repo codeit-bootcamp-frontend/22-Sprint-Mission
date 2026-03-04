@@ -10,7 +10,7 @@ import LinkTo from '@/components/Common/LinkTo';
 
 const LIST_SORT_TYPE = ['최신순', '좋아요순'];
 
-function BestProduct({ item }) {
+function AllProduct({ item }) {
   const [products, setProducts] = useState([]);
   const [sortType, setSortType] = useState('최신순');
 
@@ -80,4 +80,4 @@ function BestProduct({ item }) {
     </div>
   );
 }
-export default BestProduct;
+export default AllProduct;
