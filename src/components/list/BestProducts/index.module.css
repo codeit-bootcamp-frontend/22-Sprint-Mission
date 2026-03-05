@@ -1,0 +1,27 @@
+.bestProduct {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.productsWrap {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: calc(25% - 18px);
+}
+
+@media (max-width: 768px) {
+  .product {
+    width: calc(50% - 12px);
+  }
+}
+
+@media (max-width: 480px) {
+  .product {
+    width: calc(100%);
+  }
+}

@@ -1,0 +1,211 @@
+.hero,
+.bottomBanner {
+  background-color: #cfe5ff;
+  padding-top: 80px;
+  min-height: 540px;
+  display: flex;
+  align-items: flex-end;
+}
+.hero .conWrap,
+.bottomBanner .conWrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.hero .txtWrap,
+.bottomBanner .txtWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero .txtWrap {
+  padding-top: 32px;
+}
+.hero .bigTxt,
+.bottomBanner .bigTxt {
+  font-size: 40px;
+  font-weight: 700;
+  color: #374151;
+  line-height: 1.4;
+}
+.hero .imgWrap,
+.bottomBanner .imgWrap {
+  width: 100%;
+  max-width: 746px;
+}
+.sectionWrap {
+  padding: 0 24px;
+}
+
+.sectionWrap .conWrap {
+  margin: 140px auto;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background-color: #fcfcfc;
+  width: fit-content;
+}
+
+.sectionWrap .second {
+  flex-direction: row-reverse;
+}
+
+.sectionWrap .txtWrap {
+  color: #374151;
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.sectionWrap .second .txtWrap {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.cate {
+  font-family: 'Abhaya Libre';
+  color: #3692ff;
+  font-size: 18px;
+  font-weight: 800;
+  display: inline-block;
+  width: fit-content;
+}
+.title {
+  font-size: 40px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+.descripsion {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.bottomBanner {
+  padding-top: 140px;
+}
+.bottomBanner .conWrap {
+  align-items: center;
+}
+
+@media (max-width: 1080px) {
+  .hero .conWrap {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 84px;
+  }
+
+  .hero {
+    background-color: #cfe5ff;
+    padding-top: 0px;
+  }
+  .hero .txtWrap {
+    padding-top: 0px;
+    margin-bottom: 160px;
+    align-items: center;
+  }
+  .hero .bigTxt br {
+    display: none;
+  }
+  .hero .imgWrap {
+    max-width: 746px;
+    width: 100%;
+  }
+  .sectionWrap {
+    padding: 24px 24px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .sectionWrap .conWrap {
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 12px;
+    width: 100%;
+    background-color: transparent;
+    flex-direction: column;
+  }
+
+  .sectionWrap .second {
+    flex-direction: column;
+  }
+
+  .sectionWrap .txtWrap {
+    padding: 24px 0 0;
+    align-items: left;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+  .title br {
+    display: none;
+  }
+  .descripsion {
+    font-size: 18px;
+  }
+  .bottomBanner {
+    padding-top: 200px;
+  }
+  .bottomBanner .conWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 180px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero .conWrap {
+    padding-top: 0px;
+  }
+
+  .hero {
+    padding-top: 0px;
+  }
+  .hero .txtWrap {
+    margin-bottom: 140px;
+    text-align: center;
+  }
+  .hero .bigTxt,
+  .bottomBanner .bigTxt {
+    font-size: 32px;
+  }
+  .hero .bigTxt br {
+    display: block;
+  }
+
+  .sectionWrap {
+    gap: 48px;
+  }
+
+  .sectionWrap .txtWrap {
+    padding: 24px 0 0;
+    align-items: left;
+    gap: 12px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+  .title br {
+    display: block;
+  }
+
+  .bottomBanner {
+    padding-top: 120px;
+  }
+  .bottomBanner .conWrap {
+    gap: 100px;
+  }
+}

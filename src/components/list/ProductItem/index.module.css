@@ -1,0 +1,51 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.imageWrap {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1/1;
+  background-color: #eee;
+}
+
+.imageWrap img {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  object-fit: cover;
+}
+
+.infoWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+.name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2937;
+}
+.price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1f2937;
+}
+.likeCount {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.likeCount img {
+  width: 16px;
+  height: 16px;
+}

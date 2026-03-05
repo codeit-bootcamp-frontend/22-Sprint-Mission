@@ -1,0 +1,107 @@
+.btn {
+  transition: 0.3s;
+  white-space: nowrap;
+}
+.primary {
+  color: #fff;
+  background-color: #3692ff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 16px;
+}
+.primary:not(:disabled):hover {
+  background-color: #1967d6;
+}
+
+.btnL {
+  border-radius: 9999px;
+  min-width: 128px;
+  min-height: 48px;
+  max-width: 357px;
+  width: 100%;
+}
+
+.btnM {
+  border-radius: 8px;
+  height: 42px;
+  padding: 12px 24px;
+}
+.btnS {
+  border-radius: 5px;
+}
+
+.txtBtn {
+  color: red;
+}
+
+.btnLogin,
+.btnsignup {
+  border: none;
+  background-color: var(--point-color);
+  border-radius: 40px;
+  height: 56px;
+  padding: 12px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.btnLogin:disabled,
+.btnsignup:disabled {
+  background-color: #aaa;
+}
+
+.passwordToggle {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url(@/assets/ic_password_view.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: 100%;
+  opacity: 0.7;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  margin-top: -12px;
+  z-index: 10;
+}
+.active {
+  background-image: url(@/assets/ic_password_view_active.svg);
+}
+
+.dropdown {
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 130px;
+}
+
+.dropdown span {
+  color: #1f2937;
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.dropdown img {
+  width: 16px;
+}
+
+.dropdownItem {
+  padding: 12px 25px;
+  text-align: center;
+  width: 100%;
+  font-size: 16px;
+  color: #1f2937;
+  font-weight: 400;
+}
+
+.dropdownItem + .dropdownItem {
+  border-top: 1px solid #e5e7eb;
+}

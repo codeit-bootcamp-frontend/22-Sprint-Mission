@@ -1,0 +1,23 @@
+input[type='password'],
+input[type='text'] {
+  border: 1px solid transparent;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  height: 56px;
+  padding: 12px 24px;
+  font-size: 16px;
+  color: #1f2937;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+input[type='password'] {
+  padding-right: 48px;
+}
+
+input[type='password'].error,
+input[type='text'].error {
+  border: 1px solid #f74747;
+}
+
