@@ -7,6 +7,8 @@ import styles from './index.module.css';
 import cn from 'classnames';
 import { useState } from 'react';
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 function SignIn() {
   const [mailValue, setMailValue] = useState('');
   const [isMailValid, setIsMailValid] = useState(false);
@@ -23,13 +25,11 @@ function SignIn() {
   const [isPasswordCheckValid, setIsPasswordCheckValid] = useState(false);
   const [passwordCheckMessage, setPasswordCheckMessage] = useState('');
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
   const handleMailChange = (e) => {
     const v = e.target.value;
     setMailValue(v);
 
-    if (emailRegex.test(v)) {
+    if (EMAIL_REGEX.test(v)) {
       setIsMailValid(true);
     } else {
       setIsMailValid(false);
@@ -57,7 +57,7 @@ function SignIn() {
       return;
     }
 
-    if (!emailRegex.test(v)) {
+    if (!EMAIL_REGEX.test(v)) {
       setIsMailValid(false);
       setMailMessage('이메일 형식이 올바르지 않습니다.');
       return;
@@ -99,7 +99,6 @@ function SignIn() {
   const handlePasswordCheckBlur = (e) => {
     const v = e.target.value;
 
-    console.log('password', passwordValue);
     if (v !== passwordValue) {
       setIsPasswordCheckValid(false);
       setPasswordCheckMessage('비밀번호가 일치하지 않습니다.');
@@ -126,7 +125,7 @@ function SignIn() {
       </div>
       <form action="" className={styles.formBox}>
         <div>
-          <label htmlFor="login-email" className={styles.label}>
+          <label htmlFor="loginEmail" className={styles.label}>
             이메일
           </label>
           <Input
@@ -141,12 +140,12 @@ function SignIn() {
           {mailMessage && <p className={styles.alert}>{mailMessage}</p>}
         </div>
         <div>
-          <label htmlFor="login-email" className={styles.label}>
+          <label htmlFor="loginNickname" className={styles.label}>
             닉네임
           </label>
           <Input
             type="text"
-            id="login-nickname"
+            id="loginNickname"
             className={styles.inputNickname}
             onBlur={handleNicknameBlur}
             placeholder="닉네임을 입력해주세요."
@@ -155,7 +154,7 @@ function SignIn() {
           {nicknameMessage && <p className={styles.alert}>{nicknameMessage}</p>}
         </div>
         <div>
-          <label htmlFor="login-password" className={styles.label}>
+          <label htmlFor="loginPassword" className={styles.label}>
             비밀번호
           </label>
           <div className={styles.passwordWrap}>
@@ -172,7 +171,7 @@ function SignIn() {
           {passwordMessage && <p className={styles.alert}>{passwordMessage}</p>}
         </div>
         <div>
-          <label htmlFor="login-confirm-password" className={styles.label}>
+          <label htmlFor="loginCheckPassword" className={styles.label}>
             비밀번호 확인
           </label>
           <div className={styles.passwordWrap}>
@@ -182,7 +181,7 @@ function SignIn() {
               className={styles.inputPassword}
               placeholder="비밀번호를 다시 한번 입력해주세요."
               onBlur={handlePasswordCheckBlur}
-              error={passwordValue && !isPasswordValid}
+              error={!isPasswordCheckValid}
             />
           </div>
           {passwordCheckMessage && (

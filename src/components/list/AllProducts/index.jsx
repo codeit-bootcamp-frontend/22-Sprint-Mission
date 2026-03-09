@@ -10,7 +10,7 @@ import LinkTo from '@/components/Common/LinkTo';
 
 const LIST_SORT_TYPE = ['최신순', '좋아요순'];
 
-function AllProduct({ item }) {
+function AllProducts() {
   const [products, setProducts] = useState([]);
   const [sortType, setSortType] = useState('최신순');
 
@@ -25,7 +25,7 @@ function AllProduct({ item }) {
         const { list: initialProduct } = await getProducts();
         setProducts(initialProduct ?? []);
       } catch (error) {
-        console.error('Failed to fetch recipients:', error);
+        console.error('Failed to fetch products:', error);
       }
     }
     fetchProducts();
@@ -80,4 +80,4 @@ function AllProduct({ item }) {
     </div>
   );
 }
-export default AllProduct;
+export default AllProducts;
