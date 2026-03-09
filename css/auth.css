@@ -39,6 +39,7 @@ body {
   height: 56px;
   border-radius: 12px;
   border: 1px solid transparent;
+  letter-spacing: 0;
 }
 .input-field input.error {
   border: 1px solid var(--error-red-color);
@@ -76,9 +77,11 @@ body {
   font-weight: 600;
   font-size: 20px;
   line-height: 1.6;
+  cursor: initial;
 }
 .auth-form .submit-btn.active {
   background-color: var(--primary-color-100);
+  cursor: pointer;
 }
 .auth-container .short-cut {
   display: flex;
