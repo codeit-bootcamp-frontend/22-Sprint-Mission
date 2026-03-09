@@ -18,7 +18,7 @@ visibilityBtn.forEach((btn) => {
 const form = document.querySelector(".auth-form");
 const inputWrap = document.querySelectorAll(".input-field");
 const inputs = document.querySelectorAll("input");
-// const inputs = document.querySelectorAll(".input-field input");
+const passwordInput = document.querySelector("#password");
 const submitBtn = document.querySelector(".submit-btn");
 
 // 에러 메시지 출력 함수
@@ -45,25 +45,33 @@ function clearError(input) {
 function validateInput(input) {
   const value = input.value.trim();
 
-  console.log("👉", input);
-
-  if (!value) {
-    const messageMap = {
-      email: "이메일을 입력해주세요.",
-      password: "비밀번호를 입력해주세요.",
-      text: "닉네임을 입력해주세요.",
-    };
-
-    showError(input, messageMap[input.type] || "값을 입력해주세요.");
-    return false;
-  }
-  if (input.type === "password" && value.length < 8) {
-    showError(input, "비밀번호를 8자 이상 입력해주세요.");
-    return false;
-  }
-
+  // 이메일 검사
   if (input.type === "email" && !input.validity.valid) {
     showError(input, "올바른 이메일 형식이 아닙니다.");
+    return false;
+  }
+
+  // 비밀번호 검사
+  if (input.type === "password") {
+    if (!value) {
+      clearError(input);
+      return false;
+    }
+
+    if (value.length < 8) {
+      showError(input, "비밀번호를 8자 이상 입력해주세요.");
+      return false;
+    }
+
+    if (input.id === "password-confirm" && value !== passwordInput.value) {
+      showError(input, "비밀번호가 일치하지 않습니다.");
+      return false;
+    }
+  }
+
+  // 닉네임 검사
+  if (input.id === "nickname" && !value) {
+    showError(input, "닉네임을 입력해주세요.");
     return false;
   }
 
@@ -80,10 +88,13 @@ function checkFormValid() {
 }
 
 // 실시간 검사
-inputWrap.forEach((input) => {
-  console.log(input);
-  input.addEventListener("input", checkFormValid);
-  // input.addEventListener("focusout", checkFormValid);
+inputs.forEach((input) => {
+  input.addEventListener("focusout", () => {
+    const isValidInput = validateInput(input); // 현재 인풋 검증
+    if (isValidInput) {
+      checkFormValid(); // 검증 성공 시에만 전체 폼 검증
+    }
+  });
 });
 
 // form 제출 시 페이지 이동
