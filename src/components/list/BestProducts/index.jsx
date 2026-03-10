@@ -32,6 +32,7 @@ function BestProducts() {
       }
     }
     fetchProducts();
+
     function handleResize() {
       fetchProducts();
     }
