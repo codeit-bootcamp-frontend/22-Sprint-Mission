@@ -19,6 +19,7 @@ const form = document.querySelector(".auth-form");
 const inputWrap = document.querySelectorAll(".input-field");
 const inputs = document.querySelectorAll("input");
 const passwordInput = document.querySelector("#password");
+const passwordConfirmInput = document.querySelector("#password-confirm");
 const submitBtn = document.querySelector(".submit-btn");
 
 // 에러 메시지 출력 함수
@@ -52,25 +53,23 @@ function validateInput(input) {
   }
 
   // 비밀번호 검사
-  if (input.type === "password") {
+  if (input === passwordInput || input === passwordConfirmInput) {
     if (!value) {
       clearError(input);
       return false;
     }
-
-    if (value.length < 8) {
-      showError(input, "비밀번호를 8자 이상 입력해주세요.");
+    if (input === passwordConfirmInput && value !== passwordInput.value) {
+      showError(input, "비밀번호가 일치하지 않습니다.");
       return false;
     }
-
-    if (input.id === "password-confirm" && value !== passwordInput.value) {
-      showError(input, "비밀번호가 일치하지 않습니다.");
+    if (value.length < 8) {
+      showError(input, "비밀번호를 8자 이상 입력해주세요.");
       return false;
     }
   }
 
   // 닉네임 검사
-  if (input.id === "nickname" && !value) {
+  if (input.type === "text" && value.length < 1) {
     showError(input, "닉네임을 입력해주세요.");
     return false;
   }
@@ -81,7 +80,9 @@ function validateInput(input) {
 
 // 전체 폼 검사
 function checkFormValid() {
-  const isValid = [...inputs].every((input) => validateInput(input));
+  const isValid = [...inputs].every(
+    (input) => !input.classList.contains("error") && input.value.length > 0,
+  );
 
   submitBtn.classList.toggle("active", isValid);
   submitBtn.disabled = !isValid;
@@ -89,11 +90,9 @@ function checkFormValid() {
 
 // 실시간 검사
 inputs.forEach((input) => {
-  input.addEventListener("focusout", () => {
-    const isValidInput = validateInput(input); // 현재 인풋 검증
-    if (isValidInput) {
-      checkFormValid(); // 검증 성공 시에만 전체 폼 검증
-    }
+  input.addEventListener("keyup", () => {
+    validateInput(input);
+    checkFormValid();
   });
 });
 
