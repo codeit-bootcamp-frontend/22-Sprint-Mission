@@ -1,5 +1,6 @@
 input[type='email'],
-input[type='text'] {
+input[type='text'],
+input[type='number'] {
   border: 1px solid transparent;
   background-color: #f3f4f6;
   border-radius: 12px;

@@ -1,6 +1,7 @@
 .btn {
   transition: 0.3s;
   white-space: nowrap;
+  width: fit-content;
 }
 .primary {
   color: #fff;
@@ -104,4 +105,32 @@
 
 .dropdownItem + .dropdownItem {
   border-top: 1px solid #e5e7eb;
+}
+
+.btnAddImg {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  background-color: #e5e7eb;
+  color: #9ca3af;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 12px;
+  max-width: 282px;
+  aspect-ratio: 1/1;
+  width: 100%;
+}
+
+.btnAddImg img {
+  width: 48px;
+}
+
+.btnDelTag {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: space-between;
 }
