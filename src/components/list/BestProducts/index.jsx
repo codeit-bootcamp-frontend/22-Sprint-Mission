@@ -18,17 +18,29 @@ function BestProducts() {
       try {
         const { list: likeProducts } = await getProducts();
         const likeArr = [...likeProducts];
+
         const sorted = likeArr.sort((a, b) => {
           return b.favoriteCount - a.favoriteCount;
         });
+
         const limit = getLimitByWindowWidth();
         const topN = sorted.slice(0, limit);
+
         setProducts(topN);
       } catch (error) {
         console.error('Failed to fetch products:', error);
       }
     }
     fetchProducts();
+    function handleResize() {
+      fetchProducts();
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (

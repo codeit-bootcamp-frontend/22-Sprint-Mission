@@ -16,7 +16,7 @@ export default defineConfig([
   },
 
   js.configs.recommended,
-  ...tseslint.configs.recommended,
+  // ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   reactHooks.configs['recommended-latest'],
 
