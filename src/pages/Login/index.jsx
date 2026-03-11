@@ -7,27 +7,25 @@ import { useState } from 'react';
 import styles from './index.module.css';
 import cn from 'classnames';
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 function Login() {
   const [mailValue, setMailValue] = useState('');
   const [isMailValid, setIsMailValid] = useState(false);
   const [mailMessage, setMailMessage] = useState('');
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const [passwordValue, setPasswordValue] = useState('');
+  const [isPasswordValid, setIsPasswordValid] = useState(false);
+  const [passwordMessage, setPasswordMessage] = useState('');
 
   const handleMailChange = (e) => {
     const v = e.target.value;
     setMailValue(v);
 
-    if (emailRegex.test(v)) {
+    if (EMAIL_REGEX.test(v)) {
       setIsMailValid(true);
     } else {
       setIsMailValid(false);
     }
   };
-
-  const [passwordValue, setPasswordValue] = useState('');
-  const [isPasswordValid, setIsPasswordValid] = useState(false);
-  const [passwordMessage, setPasswordMessage] = useState('');
 
   const handlePasswordChange = (e) => {
     const v = e.target.value;
@@ -42,6 +40,7 @@ function Login() {
     }
   };
   const handleMailBlur = (e) => {
+    setTouched((prev) => ({ ...prev, mail: true }));
     const v = e.target.value;
 
     if (!v) {
@@ -50,7 +49,7 @@ function Login() {
       return;
     }
 
-    if (!emailRegex.test(v)) {
+    if (!EMAIL_REGEX.test(v)) {
       setIsMailValid(false);
       setMailMessage('이메일 형식이 올바르지 않습니다.');
       return;
@@ -61,6 +60,7 @@ function Login() {
   };
 
   const handlePasswordBlur = (e) => {
+    setTouched((prev) => ({ ...prev, password: true }));
     const v = e.target.value;
 
     if (!v) {
@@ -72,7 +72,10 @@ function Login() {
     setIsPasswordValid(true);
     setPasswordMessage('');
   };
-
+  const [touched, setTouched] = useState({
+    mail: false,
+    password: false,
+  });
   const isFormValid = isMailValid && isPasswordValid;
 
   return (
@@ -98,7 +101,7 @@ function Login() {
             placeholder="이메일을 입력해주세요."
             onChange={handleMailChange}
             onBlur={handleMailBlur}
-            error={mailValue && !isMailValid}
+            error={touched.mail && !isMailValid}
           />
           {mailMessage && <p className={styles.alert}>{mailMessage}</p>}
         </div>
@@ -114,7 +117,7 @@ function Login() {
               placeholder="비밀번호를 입력해주세요."
               onChange={handlePasswordChange}
               onBlur={handlePasswordBlur}
-              error={passwordValue && !isPasswordValid}
+              error={touched.password && !isPasswordValid}
             />
           </div>
           {passwordMessage && <p className={styles.alert}>{passwordMessage}</p>}

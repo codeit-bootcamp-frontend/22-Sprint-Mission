@@ -46,10 +46,12 @@
   color: #fff;
   cursor: pointer;
   margin-top: 8px;
+  width: 100%;
 }
 
 .btnLogin:disabled,
-.btnsignup:disabled {
+.btnsignup:disabled,
+.btnAddItem:disabled {
   background-color: #aaa;
 }
 

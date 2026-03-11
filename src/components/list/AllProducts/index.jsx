@@ -16,7 +16,6 @@ function AllProducts() {
 
   const onChange = (selectedValue) => {
     setSortType(selectedValue);
-    console.log('sortType', selectedValue);
   };
 
   useEffect(() => {

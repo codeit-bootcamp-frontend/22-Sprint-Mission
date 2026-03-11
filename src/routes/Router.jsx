@@ -12,11 +12,11 @@ export default function AppRoutes() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signIn" element={<SignIn />} />
           <Route path="/items" element={<List />} />
           <Route path="/additem" element={<AddItem />} />
         </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signIn" element={<SignIn />} />
       </Routes>
     </BrowserRouter>
   );

@@ -35,6 +35,10 @@ function SignIn() {
       setIsMailValid(false);
     }
   };
+  const handleNicknameChange = (e) => {
+    const v = e.target.value;
+    setNicknameValue(v);
+  };
 
   const handlePasswordChange = (e) => {
     const v = e.target.value;
@@ -49,6 +53,7 @@ function SignIn() {
     }
   };
   const handleMailBlur = (e) => {
+    setTouched((prev) => ({ ...prev, mail: true }));
     const v = e.target.value;
 
     if (!v) {
@@ -67,6 +72,7 @@ function SignIn() {
     setMailMessage('');
   };
   const handleNicknameBlur = (e) => {
+    setTouched((prev) => ({ ...prev, nickname: true }));
     const v = e.target.value;
 
     if (!v) {
@@ -78,6 +84,7 @@ function SignIn() {
     setNicknameMessage('');
   };
   const handlePasswordBlur = (e) => {
+    setTouched((prev) => ({ ...prev, password: true }));
     const v = e.target.value;
 
     if (!v) {
@@ -95,8 +102,8 @@ function SignIn() {
     setIsPasswordValid(true);
     setPasswordMessage('');
   };
-
   const handlePasswordCheckBlur = (e) => {
+    setTouched((prev) => ({ ...prev, passwordCheck: true }));
     const v = e.target.value;
 
     if (v !== passwordValue) {
@@ -108,7 +115,12 @@ function SignIn() {
     setIsPasswordCheckValid(true);
     setPasswordCheckMessage('');
   };
-
+  const [touched, setTouched] = useState({
+    mail: false,
+    nickname: false,
+    password: false,
+    passwordCheck: false,
+  });
   const isFormValid =
     isMailValid && isNicknameValid && isPasswordValid && isPasswordCheckValid;
 
@@ -135,7 +147,7 @@ function SignIn() {
             placeholder="이메일을 입력해주세요."
             onChange={handleMailChange}
             onBlur={handleMailBlur}
-            error={mailValue && !isMailValid}
+            error={touched.mail && !isMailValid}
           />
           {mailMessage && <p className={styles.alert}>{mailMessage}</p>}
         </div>
@@ -146,10 +158,11 @@ function SignIn() {
           <Input
             type="text"
             id="loginNickname"
+            placeholder="닉네임을 입력해주세요."
             className={styles.inputNickname}
             onBlur={handleNicknameBlur}
-            placeholder="닉네임을 입력해주세요."
-            error={nicknameValue && !isNicknameValid}
+            onChange={handleNicknameChange}
+            error={touched.nickname && !isNicknameValid}
           />
           {nicknameMessage && <p className={styles.alert}>{nicknameMessage}</p>}
         </div>
@@ -161,11 +174,11 @@ function SignIn() {
             <PasswordInput
               type="password"
               id="loginPassword"
-              className={styles.inputPassword}
               placeholder="비밀번호를 입력해주세요."
+              className={styles.inputPassword}
               onChange={handlePasswordChange}
               onBlur={handlePasswordBlur}
-              error={passwordValue && !isPasswordValid}
+              error={touched.password && !isPasswordValid}
             />
           </div>
           {passwordMessage && <p className={styles.alert}>{passwordMessage}</p>}
@@ -178,10 +191,10 @@ function SignIn() {
             <PasswordInput
               type="password"
               id="loginCheckPassword"
-              className={styles.inputPassword}
               placeholder="비밀번호를 다시 한번 입력해주세요."
+              className={styles.inputPassword}
               onBlur={handlePasswordCheckBlur}
-              error={!isPasswordCheckValid}
+              error={touched.passwordCheck && !isPasswordCheckValid}
             />
           </div>
           {passwordCheckMessage && (
