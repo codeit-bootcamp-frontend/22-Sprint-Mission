@@ -75,11 +75,6 @@ function addItem() {
     }
   };
 
-  const handleNameChange = (e) => {};
-  const handleIntroChange = (e) => {};
-  const handlePriceChange = (e) => {};
-  const handleTagChange = (e) => {};
-
   const [touched, setTouched] = useState({
     name: false,
     intro: false,
@@ -145,7 +140,6 @@ function addItem() {
             className={styles.inputName}
             placeholder="상품명을 입력해주세요."
             onBlur={handleNameBlur}
-            onChange={handleNameChange}
             error={touched.name && !isNameValid}
           />
           {nameMessage && <p className={styles.alert}>{nameMessage}</p>}
@@ -159,7 +153,6 @@ function addItem() {
             className="productIntro"
             placeholder="상품 소개를 입력해주세요."
             onBlur={handleIntroBlur}
-            onChange={handleIntroChange}
             error={touched.intro && !isIntroValid}
           />
           {introMessage && <p className={styles.alert}>{introMessage}</p>}
@@ -174,7 +167,6 @@ function addItem() {
             className={styles.inputPrice}
             placeholder="판매 가격을 입력해주세요."
             onBlur={handlePriceBlur}
-            onChange={handlePriceChange}
             error={touched.price && !isPriceValid}
           />
           {priceMessage && <p className={styles.alert}>{priceMessage}</p>}
@@ -189,7 +181,6 @@ function addItem() {
             tags={tags}
             setTags={setTags}
             onBlur={handleTagBlur}
-            onChange={handleTagChange}
           />
           {tagMessage && <p className={styles.alert}>{tagMessage}</p>}
         </div>
