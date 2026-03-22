@@ -1,0 +1,40 @@
+.modalWrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0002;
+  z-index: 101;
+  padding: 24px;
+}
+
+.modalBox {
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 400px;
+  width: 100%;
+}
+.modalTitle {
+  font-size: 20px;
+  font-weight: 600;
+}
+.modalSubText {
+  font-size: 16px;
+  color: #747474;
+  font-weight: 500;
+}
+.modalBox .buttonWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}

@@ -1,11 +1,9 @@
-input[type='email'],
-input[type='text'],
-input[type='number'] {
+textarea {
   border: 1px solid transparent;
   background-color: #f3f4f6;
   border-radius: 12px;
   height: 56px;
-  padding: 12px 24px;
+  padding: 24px 24px;
   font-size: 16px;
   color: #1f2937;
   width: 100%;
@@ -13,9 +11,9 @@ input[type='number'] {
   z-index: 1;
 }
 
-input[type='email'].error,
-input[type='password'].error,
-input[type='text'].error,
-input[type='number'].error {
+.productIntro {
+  height: 282px;
+}
+textarea.error {
   border: 1px solid #f74747;
 }

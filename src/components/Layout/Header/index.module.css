@@ -8,7 +8,7 @@
   z-index: 100;
 }
 .headerWrap {
-  max-width: 1200px;
+  max-width: 1600px;
   padding: 8px 40px;
   margin: 0 auto;
   display: flex;
@@ -52,7 +52,17 @@
 @media (max-width: 767px) {
   .headerlogo {
     position: relative;
-    left: -50px;
+    left: -48px;
+    width: auto;
+  }
+  .logo {
+    width: 104px;
+  }
+  .menu {
+    padding: 12px 12px;
+    font-size: 16px;
+    color: #4b5563;
+    font-weight: 700;
   }
 }
 @media (max-width: 480px) {

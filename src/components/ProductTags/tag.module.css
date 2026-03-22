@@ -1,0 +1,13 @@
+.tag {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  background-color: #f3f4f6;
+  border-radius: 9999px;
+  padding: 8px 12px 8px 16px;
+  color: #1f2937;
+  font-size: 16px;
+  font-weight: 400;
+  width: fit-content;
+}

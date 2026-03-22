@@ -4,7 +4,7 @@ import ProductItem from '@/components/list/ProductItem';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-function BestProduct() {
+function BestProducts() {
   const [products, setProducts] = useState([]);
 
   const getLimitByWindowWidth = () => {
@@ -18,21 +18,31 @@ function BestProduct() {
       try {
         const { list: likeProducts } = await getProducts();
         const likeArr = [...likeProducts];
+
         const sorted = likeArr.sort((a, b) => {
           return b.favoriteCount - a.favoriteCount;
         });
+
         const limit = getLimitByWindowWidth();
         const topN = sorted.slice(0, limit);
-        setProducts(topN ?? []);
+
+        setProducts(topN);
       } catch (error) {
-        console.error('Failed to fetch recipients:', error);
+        console.error('Failed to fetch products:', error);
       }
     }
     fetchProducts();
-  }, []);
 
-  const { id, images, description, name, price, favoriteCount, tags } =
-    products;
+    function handleResize() {
+      fetchProducts();
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <div className={styles.bestProduct}>
@@ -49,4 +59,4 @@ function BestProduct() {
     </div>
   );
 }
-export default BestProduct;
+export default BestProducts;

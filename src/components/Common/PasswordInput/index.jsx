@@ -3,11 +3,15 @@ import styles from './index.module.css';
 import Button from '@/components/Common/Button';
 import { useState } from 'react';
 
-function Input({ children, error = false, ...props }) {
+function Input({ children, className = '', error = false, ...props }) {
   const [showPassword, setShowPassword] = useState(false);
   const handleToggle = () => {
     setShowPassword((prev) => !prev);
   };
+  const extraClasses = className
+    .split(' ')
+    .map((name) => styles[name])
+    .filter(Boolean);
   return (
     <>
       <input
@@ -17,7 +21,12 @@ function Input({ children, error = false, ...props }) {
       />
       <Button
         type="button"
-        className="passwordToggle"
+        className={cn(
+          styles.input,
+          styles.passwordToggle,
+          error && styles.error,
+          ...extraClasses,
+        )}
         onClick={handleToggle}
         view={showPassword}
       />

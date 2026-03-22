@@ -1,9 +1,11 @@
 import LogoImage from '@/assets/logo.svg';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import styles from './index.module.css';
 import Button from '@/components/Common/Button';
 
 function Header() {
+  const location = useLocation();
+
   return (
     <header className={styles.header}>
       <nav className={styles.headerWrap}>
@@ -27,16 +29,19 @@ function Header() {
           </NavLink>
           <NavLink
             className={({ isActive }) =>
-              isActive ? `${styles.menu} ${styles.active}` : styles.menu
+              isActive || location.pathname.startsWith('/additem')
+                ? `${styles.menu} ${styles.active}`
+                : styles.menu
             }
             to="/items"
           >
             중고마켓
           </NavLink>
         </div>
-        <Button className="primary btnS">
-          <Link to="/login">로그인</Link>
-        </Button>
+
+        <Link to="/login">
+          <Button className="primary btnS">로그인</Button>
+        </Link>
       </nav>
     </header>
   );
