@@ -13,7 +13,6 @@ export default function ProductTags({ tags, setTags, onBlur, error }) {
   function handleMakeTag(e) {
     if (e.key === ',') {
       e.preventDefault();
-
       const tagResult = e.target.value.trim();
 
       if (!tagResult) return;

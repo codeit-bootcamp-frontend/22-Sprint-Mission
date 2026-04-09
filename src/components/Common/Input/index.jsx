@@ -2,7 +2,6 @@ import cn from 'classnames';
 import styles from './index.module.css';
 
 function Input({
-  children,
   className = '',
   error = false,
   maxLength,
