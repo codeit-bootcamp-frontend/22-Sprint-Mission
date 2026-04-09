@@ -12,10 +12,7 @@ export default function Pagination({
   currentPage,
   onChange,
 }: PaginationProps) {
-  const ITEMS_PER_PAGE = 8;
-  const totalPage = Math.ceil(total / ITEMS_PER_PAGE);
-
-  const pageNum = Array.from({ length: totalPage }, (_, i) => i + 1);
+  const pageNum = Array.from({ length: total }, (_, i) => i + 1);
 
   return (
     <ul className="flex items-center gap-2 mt-6">
@@ -48,7 +45,7 @@ export default function Pagination({
       {/* 다음 */}
       <li>
         <button
-          onClick={() => onChange(Math.min(currentPage + 1, totalPage))}
+          onClick={() => onChange(Math.min(currentPage + 1, total))}
           className="w-10 aspect-square flex items-center justify-center border border-gray-200 rounded-full"
         >
           <img src={nextIcon} alt="" />
