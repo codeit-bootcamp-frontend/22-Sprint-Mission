@@ -1,5 +1,7 @@
 import cn from 'classnames';
 import styles from './index.module.css';
+import IconHeartInActive from '@/assets/ic_heart_inactive.svg';
+import IconHeartActive from '@/assets/ic_heart_active.svg';
 
 function Button({
   children,
@@ -7,6 +9,7 @@ function Button({
   active = false,
   disabled = false,
   view = false,
+  count,
   ...props
 }) {
   const extraClasses = className
@@ -22,6 +25,12 @@ function Button({
       disabled={disabled}
       {...props}
     >
+      {className === 'likeBtn' &&
+        (active ? (
+          <img src={IconHeartActive} />
+        ) : (
+          <img src={IconHeartInActive} />
+        ))}
       {children}
     </button>
   );

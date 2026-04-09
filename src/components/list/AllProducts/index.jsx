@@ -69,7 +69,11 @@ function AllProducts() {
       <div className={styles.productsWrap}>
         {sortedProducts.map((item) => {
           return (
-            <Link className={styles.product} key={item.id} to={`/${item.id}`}>
+            <Link
+              className={styles.product}
+              key={item.id}
+              to={`/items/${item.id}`}
+            >
               <ProductItem item={item} />
             </Link>
           );
