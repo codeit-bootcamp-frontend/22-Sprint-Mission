@@ -19,6 +19,8 @@ function Comment({ id }) {
   const [editingId, setEditingId] = useState(null);
   const [editValue, setEditValue] = useState('');
 
+  const [commentValue, setCommentValue] = useState('');
+
   useEffect(() => {
     async function fetchComments() {
       const comments = await getComments(id);
@@ -36,9 +38,13 @@ function Comment({ id }) {
           className="comment"
           name="comment"
           placeholder="개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다."
+          value={commentValue}
+          onChange={(e) => setCommentValue(e.target.value)}
         />
         <div className={styles.btnWrap}>
-          <Button className="btn primary btnS">등록</Button>
+          <Button className="btn primary btnS" disabled={!commentValue.trim()}>
+            등록
+          </Button>
         </div>
       </form>
       <div className={styles.commentWrap}>
