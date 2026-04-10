@@ -8,14 +8,16 @@ import Dropdown from '@/components/Common/Dropdown';
 import { Link } from 'react-router-dom';
 import LinkTo from '@/components/Common/LinkTo';
 
-const LIST_SORT_TYPE = ['최신순', '좋아요순'];
-
+const LIST_SORT_TYPE = [
+  { label: '최신순', value: 'latest' },
+  { label: '좋아요순', value: 'favorite' },
+];
 function AllProducts() {
   const [products, setProducts] = useState([]);
   const [sortType, setSortType] = useState('최신순');
 
-  const onChange = (selectedValue) => {
-    setSortType(selectedValue);
+  const onChange = (option) => {
+    setSortType(option.value);
   };
 
   useEffect(() => {
@@ -33,13 +35,11 @@ function AllProducts() {
   // 정렬순하기.. 우선 복사하고
   const sortedProducts = [...products];
   // 정렬 조건
-  if (sortType === '최신순') {
-    // 복사한 배열에 sort((조건 a,b)=>{return 값으로 ... })
+  if (sortType === 'latest') {
     sortedProducts.sort((a, b) => {
       return new Date(b.createdAt || 0) - new Date(a.createdAt || 0);
-      // 문자열 데이터를 Date로 Data객체로 변환됨.
     });
-  } else if (sortType === '좋아요순') {
+  } else if (sortType === 'favorite') {
     sortedProducts.sort((a, b) => {
       return b.favoriteCount - a.favoriteCount;
     });
@@ -63,6 +63,7 @@ function AllProducts() {
             options={LIST_SORT_TYPE}
             value={sortType}
             onChange={onChange}
+            type="select"
           />
         </div>
       </div>

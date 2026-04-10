@@ -9,6 +9,7 @@ textarea {
   width: 100%;
   position: relative;
   z-index: 1;
+  line-height: 1.4;
 }
 
 .productIntro {
@@ -16,4 +17,18 @@ textarea {
 }
 textarea.error {
   border: 1px solid #f74747;
+}
+
+textarea.comment {
+  min-height: 100px;
+}
+textarea.comment::placeholder {
+  color: #9ca3af;
+}
+
+@media (max-width: 480px) {
+  textarea {
+    padding: 16px;
+    font-size: 14px;
+  }
 }

@@ -41,14 +41,14 @@
   gap: 16px;
 }
 .label {
-  color: #4b5563;
+  color: #868686;
   font-size: 16px;
   font-weight: 600;
 }
 .intro {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
-  color: #4b5563;
+  color: #333;
 }
 
 .tags {
@@ -100,4 +100,41 @@
 .likeWrap {
   border-left: 1px solid #e5e7eb;
   padding-left: 24px;
+}
+
+@media (max-width: 1080px) {
+  .itemImgWrap {
+    width: 350px;
+  }
+}
+@media (max-width: 768px) {
+  .itemImgWrap {
+    width: 100%;
+  }
+
+  .itemInfoContainer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .itemInfoWrap {
+    gap: 16px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .price {
+    font-size: 32px;
+    padding-bottom: 16px;
+  }
+
+  .label,
+  .tag {
+    font-size: 14px;
+  }
+
+  .intro {
+    font-size: 16px;
+  }
 }

@@ -5,6 +5,9 @@ import styles from './index.module.css';
 import Button from '@/components/Common/Button';
 import ProfileDefaultImg from '@/assets/ic_user_profile.svg';
 
+import { formatDate } from '@/lib/formatDate.js';
+import formatNumber from '@/lib/formatNumber.js';
+
 function ItemsInfo({ id }) {
   const [item, setItem] = useState();
 
@@ -21,7 +24,6 @@ function ItemsInfo({ id }) {
     async function fetchProduct() {
       const ItemInfo = await getProduct(id);
       setItem(ItemInfo);
-      console.log('ItemInfo', ItemInfo);
     }
     fetchProduct();
   }, []);
@@ -34,7 +36,7 @@ function ItemsInfo({ id }) {
         </div>
         <div className={styles.itemInfoWrap}>
           <p className={styles.title}>{item.name}</p>
-          <p className={styles.price}>{item.price}원</p>
+          <p className={styles.price}>{formatNumber(item.price)}원</p>
           <div className={styles.introWrap}>
             <p className={styles.label}>상품 소개</p>
             <p className={styles.intro}>{item.description}</p>
@@ -58,7 +60,9 @@ function ItemsInfo({ id }) {
               </div>
               <div className={styles.sellerinfo}>
                 <p className={styles.sellerId}>{item.ownerNickname}</p>
-                <p className={styles.uploadDate}>{item.createdAt}</p>
+                <p className={styles.uploadDate}>
+                  {formatDate(item.createdAt)}
+                </p>
               </div>
             </div>
             <div className={styles.likeWrap}>

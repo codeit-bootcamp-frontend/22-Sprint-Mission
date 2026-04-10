@@ -1,5 +1,6 @@
 import styles from './index.module.css';
 import likeIcon from '@/assets/ic_heart.svg';
+import formatNumber from '@/lib/formatNumber.js';
 
 function ProductItem({ item }) {
   if (!item) {
@@ -13,7 +14,7 @@ function ProductItem({ item }) {
       </div>
       <div className={styles.infoWrap}>
         <div className={styles.name}>{name}</div>
-        <div className={styles.price}>{price}</div>
+        <div className={styles.price}>{formatNumber(price)}원</div>
         <div className={styles.likeCount}>
           <img src={likeIcon} alt="like icon" />
           {favoriteCount}

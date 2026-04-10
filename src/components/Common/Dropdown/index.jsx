@@ -2,9 +2,12 @@ import styles from './index.module.css';
 import Button from '../Button';
 import { useState, useEffect, useRef } from 'react';
 import SelectArrow from '@/assets/ic_arrow_down.svg';
+import icDropDown from '@/assets/ic_dropdown.svg';
 
-export default function Dropdown({ options, value, disabled, onChange }) {
+export default function Dropdown({ options, value, disabled, onChange, type }) {
   const [isOpen, setIsOpen] = useState(false);
+  const selectedLabel =
+    options?.find((opt) => opt.value === value)?.label ?? value;
 
   const handleToggle = () => {
     if (disabled) {
@@ -12,32 +15,31 @@ export default function Dropdown({ options, value, disabled, onChange }) {
     }
     setIsOpen(!isOpen);
   };
-  const handleSelect = (e) => {
-    const status = e.target.value;
+  const handleSelect = (option) => {
     setIsOpen(false);
-
-    onChange?.(status); // ⭐ 부모에게 선택값 전달
+    onChange?.(option);
   };
   return (
     <div className={styles.dropdownWrap}>
       <Button
-        className="dropdown btnM"
+        className={`${type ?? ''}`}
         onClick={handleToggle}
         disabled={disabled}
+        type="button"
       >
-        <span className={styles.value}>{value}</span>
-        <img src={SelectArrow} />
+        <span className={styles.value}>{selectedLabel}</span>
+        {type === 'select' && <img src={SelectArrow} />}
+        {type === 'dropdown' && <img src={icDropDown} />}
       </Button>
       {isOpen && !disabled && (
         <div className={styles.modal}>
           {options.map((option) => (
             <Button
-              key={option}
+              key={option.value}
               className="dropdownItem"
-              onClick={handleSelect}
-              value={option}
+              onClick={() => handleSelect(option)}
             >
-              {option}
+              {option.label}
             </Button>
           ))}
         </div>

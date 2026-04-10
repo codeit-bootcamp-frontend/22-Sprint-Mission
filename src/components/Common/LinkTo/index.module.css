@@ -13,3 +13,25 @@
   height: 42px;
   padding: 12px 24px;
 }
+.goListButton {
+  background-color: #3692ff;
+  color: #fff;
+  font-size: 18px;
+  padding: 12px 40px;
+  border-radius: 9999px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.goListButton img {
+  width: 22px;
+}
+
+.goListButton:hover {
+  background-color: #1967d6;
+}
