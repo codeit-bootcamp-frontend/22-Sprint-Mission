@@ -1,4 +1,3 @@
-'use client';
 import { useEffect, useState } from 'react';
 import { getProduct } from '@/apis/products';
 import styles from './index.module.css';
@@ -26,7 +25,7 @@ function ItemsInfo({ id }) {
       setItem(ItemInfo);
     }
     fetchProduct();
-  }, []);
+  }, [id]);
 
   return (
     item && (

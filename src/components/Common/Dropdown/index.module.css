@@ -4,7 +4,6 @@
 }
 .modal {
   position: absolute;
-  /* left: 0; */
   right: 0;
   top: calc(100% + 10px);
   z-index: 10;

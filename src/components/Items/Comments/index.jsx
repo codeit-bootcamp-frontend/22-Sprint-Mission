@@ -1,4 +1,3 @@
-'use client';
 import { useEffect, useState } from 'react';
 import { getComments } from '@/apis/products';
 import styles from './index.module.css';
@@ -29,7 +28,6 @@ function Comment({ id }) {
     fetchComments();
   }, [id]);
 
-  console.log('commentAll', commentAll);
   return (
     <div className={styles.commentContainer}>
       <form className={styles.addComment}>
@@ -70,7 +68,7 @@ function Comment({ id }) {
                         setEditValue(comment.content);
                       }
                       if (option.value === 'delete') {
-                        // 삭제 로직
+                        // 삭제 로직 만들 예정...
                       }
                     }}
                   />
@@ -102,16 +100,13 @@ function Comment({ id }) {
                   <Button
                     className="primary btnM"
                     onClick={() => {
-                      console.log(editValue);
                       setEditingId(null);
                     }}
                   >
                     수정완료
                   </Button>
                 </div>
-              ) : (
-                ''
-              )}
+              ) : null}
             </div>
           </div>
         ))}

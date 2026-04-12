@@ -14,12 +14,11 @@ const LIST_SORT_TYPE = [
 ];
 function AllProducts() {
   const [products, setProducts] = useState([]);
-  const [sortType, setSortType] = useState('최신순');
+  const [sortType, setSortType] = useState('latest');
 
   const onChange = (option) => {
     setSortType(option.value);
   };
-
   useEffect(() => {
     async function fetchProducts() {
       try {

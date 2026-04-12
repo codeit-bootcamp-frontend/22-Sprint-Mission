@@ -21,7 +21,7 @@ function Input({ children, className = '', error = false, ...props }) {
       />
       <Button
         type="button"
-        className={`input, passwordToggle {error && error} ...extraClasses`}
+        className={cn('input passwordToggle', error && 'error')}
         onClick={handleToggle}
         view={showPassword}
       />

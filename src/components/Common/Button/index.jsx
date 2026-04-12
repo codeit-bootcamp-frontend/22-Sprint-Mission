@@ -9,7 +9,6 @@ function Button({
   active = false,
   disabled = false,
   view = false,
-  count,
   ...props
 }) {
   const extraClasses = className
@@ -27,7 +26,7 @@ function Button({
     >
       {className === 'likeBtn' &&
         (active ? (
-          <img src={IconHeartActive} />
+          <img src={IconHeartActive} ale="좋아요 하트 아이콘" />
         ) : (
           <img src={IconHeartInActive} />
         ))}
