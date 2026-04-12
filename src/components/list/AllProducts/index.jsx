@@ -7,42 +7,33 @@ import Input from '@/components/Common/Input';
 import Dropdown from '@/components/Common/Dropdown';
 import { Link } from 'react-router-dom';
 import LinkTo from '@/components/Common/LinkTo';
+import { useSearchParams } from 'react-router-dom';
 
 const LIST_SORT_TYPE = [
-  { label: '최신순', value: 'latest' },
+  { label: '최신순', value: 'recent' },
   { label: '좋아요순', value: 'favorite' },
 ];
 function AllProducts() {
   const [products, setProducts] = useState([]);
-  const [sortType, setSortType] = useState('latest');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const orderBy = searchParams.get('orderBy') || 'recent';
 
   const onChange = (option) => {
-    setSortType(option.value);
+    setSearchParams({ orderBy: option.value });
   };
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const { list: initialProduct } = await getProducts();
-        setProducts(initialProduct ?? []);
+        const { list } = await getProducts({
+          orderBy: orderBy === 'recent' ? 'recent' : 'favorite',
+        });
+        setProducts(list ?? []);
       } catch (error) {
         console.error('Failed to fetch products:', error);
       }
     }
     fetchProducts();
-  }, []);
-
-  // 정렬순하기.. 우선 복사하고
-  const sortedProducts = [...products];
-  // 정렬 조건
-  if (sortType === 'latest') {
-    sortedProducts.sort((a, b) => {
-      return new Date(b.createdAt || 0) - new Date(a.createdAt || 0);
-    });
-  } else if (sortType === 'favorite') {
-    sortedProducts.sort((a, b) => {
-      return b.favoriteCount - a.favoriteCount;
-    });
-  }
+  }, [orderBy]);
 
   return (
     <div className={styles.allProduct}>
@@ -60,14 +51,14 @@ function AllProducts() {
           </LinkTo>
           <Dropdown
             options={LIST_SORT_TYPE}
-            value={sortType}
+            value={orderBy}
             onChange={onChange}
             type="select"
           />
         </div>
       </div>
       <div className={styles.productsWrap}>
-        {sortedProducts.map((item) => {
+        {products.map((item) => {
           return (
             <Link
               className={styles.product}
