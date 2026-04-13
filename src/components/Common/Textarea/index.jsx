@@ -1,7 +1,14 @@
 import cn from 'classnames';
 import styles from './index.module.css';
 
-function Textarea({ children, className = '', error = false, ...props }) {
+function Textarea({
+  children,
+  className = '',
+  name,
+  error = false,
+  placeholder,
+  ...props
+}) {
   const extraClasses = className
     .split(' ')
     .map((name) => styles[name])
@@ -10,6 +17,8 @@ function Textarea({ children, className = '', error = false, ...props }) {
   return (
     <textarea
       className={cn(styles.textarea, error && styles.error, ...extraClasses)}
+      name={name}
+      placeholder={placeholder}
       {...props}
     />
   );

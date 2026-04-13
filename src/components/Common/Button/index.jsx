@@ -1,5 +1,7 @@
 import cn from 'classnames';
 import styles from './index.module.css';
+import IconHeartInActive from '@/assets/ic_heart_inactive.svg';
+import IconHeartActive from '@/assets/ic_heart_active.svg';
 
 function Button({
   children,
@@ -22,6 +24,12 @@ function Button({
       disabled={disabled}
       {...props}
     >
+      {className === 'likeBtn' &&
+        (active ? (
+          <img src={IconHeartActive} ale="좋아요 하트 아이콘" />
+        ) : (
+          <img src={IconHeartInActive} />
+        ))}
       {children}
     </button>
   );

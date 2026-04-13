@@ -21,12 +21,7 @@ function Input({ children, className = '', error = false, ...props }) {
       />
       <Button
         type="button"
-        className={cn(
-          styles.input,
-          styles.passwordToggle,
-          error && styles.error,
-          ...extraClasses,
-        )}
+        className={cn('input passwordToggle', error && 'error')}
         onClick={handleToggle}
         view={showPassword}
       />

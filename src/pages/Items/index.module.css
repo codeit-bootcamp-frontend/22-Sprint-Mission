@@ -1,0 +1,15 @@
+.itemWrap {
+  max-width: 1200px;
+  margin: 24px auto 64px;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.btnWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

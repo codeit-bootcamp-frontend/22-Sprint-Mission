@@ -1,0 +1,95 @@
+.commentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.addComment {
+  gap: 8px;
+  flex-direction: column;
+}
+
+.addComment .label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.btnWrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0;
+}
+
+.commentWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.comment {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.commentTop {
+  gap: 24px;
+}
+.editMode {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.editMode textarea {
+  height: 80px;
+}
+.commentBottom .btnWrap {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  float: right;
+}
+.viewMode {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.content {
+  flex-grow: 1;
+  font-size: 14px;
+  line-height: 24px;
+  color: #1f2937;
+}
+.commentBottom {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+}
+
+.profileImg {
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+}
+.profileInfo {
+  flex-grow: 1;
+}
+.nickName {
+  font-size: 12px;
+  line-height: 18px;
+  color: #4b5563;
+}
+.time {
+  font-size: 12px;
+  line-height: 18px;
+  color: #9ca3af;
+}

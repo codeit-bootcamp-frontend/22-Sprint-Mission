@@ -1,5 +1,3 @@
-import { getProducts } from '@/apis/products';
-import { useEffect, useState } from 'react';
 import styles from './index.module.css';
 import BestProducts from '@/components/list/BestProducts';
 import AllProducts from '@/components/list/AllProducts';

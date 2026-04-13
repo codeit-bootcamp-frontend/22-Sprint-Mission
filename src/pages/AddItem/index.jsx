@@ -8,80 +8,65 @@ import ProductTags from '@/components/ProductTags';
 import { useState, useRef } from 'react';
 import DelTagImg from '@/assets/ic_X.svg';
 
-function addItem() {
+function AddItem() {
+  // 파일 인풋의 DOM 제어를 위한 ref
   const fileInputRef = useRef(null);
+  // 이미지 미리보기 상태
   const [imagePreview, setImagePreview] = useState(null);
-
-  const [isNameValid, setIsNameValid] = useState(false);
-  const [isIntroValid, setIsIntroValid] = useState(false);
-  const [isPriceValid, setIsPriceValid] = useState(false);
-  const [isTagValid, setIsTagValid] = useState(false);
+  // 태그 배열 상태
   const [tags, setTags] = useState([]);
 
-  const [nameMessage, setNameMessage] = useState('');
-  const [introMessage, setIntroMessage] = useState('');
-  const [priceMessage, setPriceMessage] = useState('');
-  const [tagMessage, setTagMessage] = useState('');
-
-  function handleImageUpload(e) {
-    const file = e.target.files[0];
-
-    if (!file) return;
-
-    const preview = URL.createObjectURL(file);
-    setImagePreview(preview);
-  }
-  const handleNameBlur = (e) => {
-    setTouched((prev) => ({ ...prev, name: true }));
-    const v = e.target.value;
-    if (!v) {
-      setIsNameValid(false);
-      setNameMessage('상품명을 입력해주세요.');
-      return;
-    }
-    setIsNameValid(true);
-    setNameMessage('');
-  };
-  const handleIntroBlur = (e) => {
-    setTouched((prev) => ({ ...prev, intro: true }));
-    const v = e.target.value;
-    if (!v) {
-      setIsIntroValid(false);
-      setIntroMessage('상품 소개를 입력해주세요.');
-      return;
-    }
-    setIsIntroValid(true);
-    setIntroMessage('');
-  };
-  const handlePriceBlur = (e) => {
-    setTouched((prev) => ({ ...prev, price: true }));
-    const v = e.target.value;
-    if (!v) {
-      setIsPriceValid(false);
-      setPriceMessage('판매 가격이 입력되지 않았습니다.');
-      return;
-    }
-    setIsPriceValid(true);
-    setPriceMessage('');
-  };
-  const handleTagBlur = (e) => {
-    setTouched((prev) => ({ ...prev, tag: true }));
-    if (tags.length === 0) {
-      setIsTagValid(false);
-      setTagMessage('태그는 최소 1개 등록해주세요.');
-    } else {
-      setIsTagValid(true);
-      setTagMessage('');
-    }
-  };
-
-  const [touched, setTouched] = useState({
+  // 각 필드의 유효성 검증 상태
+  const [isValid, setIsValid] = useState({
     name: false,
     intro: false,
     price: false,
     tag: false,
   });
-  const isFormValid = isNameValid && isIntroValid && isPriceValid && isTagValid;
+
+  // 각 필드의 메세지 상태
+  const [message, setMessage] = useState({
+    name: '',
+    intro: '',
+    price: '',
+    tag: '',
+  });
+
+  function handleImageUpload(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const preview = URL.createObjectURL(file);
+    setImagePreview(preview);
+  }
+  useEffect(() => {
+    return () => {
+      if (imagePreview) {
+        URL.revokeObjectURL(imagePreview);
+      }
+    };
+  }, [imagePreview]);
+
+  const handleBlur = (e, field, message) => {
+    const v = e.target.value;
+
+    if (field === 'tag' && tags.length === 0) {
+      setIsValid((prev) => ({ ...prev, [field]: false }));
+      setMessage((prev) => ({ ...prev, [field]: message }));
+      return;
+    }
+
+    if (field !== 'tag' && !v) {
+      setIsValid((prev) => ({ ...prev, [field]: false }));
+      setMessage((prev) => ({ ...prev, [field]: message }));
+      return;
+    }
+
+    setIsValid((prev) => ({ ...prev, [field]: true }));
+    setMessage((prev) => ({ ...prev, [field]: '' }));
+  };
+
+  // every는 배열의 모든 값이 트루일 때, 불리언 값을 반환함.
+  const isFormValid = Object.values(isValid).every((ele) => ele);
 
   return (
     <div className={cn(styles.pageWrap, styles.addItemPage)}>
@@ -139,10 +124,10 @@ function addItem() {
             id="productName"
             className={styles.inputName}
             placeholder="상품명을 입력해주세요."
-            onBlur={handleNameBlur}
-            error={touched.name && !isNameValid}
+            onBlur={(e) => handleBlur(e, 'name', '상품명을 입력해주세요.')}
+            error={message.name && !isValid.name}
           />
-          {nameMessage && <p className={styles.alert}>{nameMessage}</p>}
+          {message.name && <p className={styles.alert}>{message.name}</p>}
         </div>
         <div>
           <label className={styles.label} htmlFor="productIntro">
@@ -152,10 +137,10 @@ function addItem() {
             id="productIntro"
             className="productIntro"
             placeholder="상품 소개를 입력해주세요."
-            onBlur={handleIntroBlur}
-            error={touched.intro && !isIntroValid}
+            onBlur={(e) => handleBlur(e, 'intro', '상품설명을 입력해주세요.')}
+            error={message.intro && !isValid.intro}
           />
-          {introMessage && <p className={styles.alert}>{introMessage}</p>}
+          {message.intro && <p className={styles.alert}>{message.intro}</p>}
         </div>
         <div>
           <label className={styles.label} htmlFor="productPrice">
@@ -166,10 +151,10 @@ function addItem() {
             id="productPrice"
             className={styles.inputPrice}
             placeholder="판매 가격을 입력해주세요."
-            onBlur={handlePriceBlur}
-            error={touched.price && !isPriceValid}
+            onBlur={(e) => handleBlur(e, 'price', '판매 가격을 입력해주세요.')}
+            error={message.price && !isValid.price}
           />
-          {priceMessage && <p className={styles.alert}>{priceMessage}</p>}
+          {message.price && <p className={styles.alert}>{message.price}</p>}
         </div>
         <div>
           <label className={styles.label} htmlFor="productTag">
@@ -177,16 +162,18 @@ function addItem() {
           </label>
           <ProductTags
             id="productTag"
-            error={touched.tag && !isTagValid}
+            error={message.tag && !isValid.tag}
             tags={tags}
             setTags={setTags}
-            onBlur={handleTagBlur}
+            onBlur={(e) =>
+              handleBlur(e, 'tag', '최소 1개의 태그를 입력해주세요.')
+            }
           />
-          {tagMessage && <p className={styles.alert}>{tagMessage}</p>}
+          {message.tag && <p className={styles.alert}>{message.tag}</p>}
         </div>
       </form>
     </div>
   );
 }
 
-export default addItem;
+export default AddItem;

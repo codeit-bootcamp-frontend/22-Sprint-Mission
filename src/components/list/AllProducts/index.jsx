@@ -7,43 +7,33 @@ import Input from '@/components/Common/Input';
 import Dropdown from '@/components/Common/Dropdown';
 import { Link } from 'react-router-dom';
 import LinkTo from '@/components/Common/LinkTo';
+import { useSearchParams } from 'react-router-dom';
 
-const LIST_SORT_TYPE = ['최신순', '좋아요순'];
-
+const LIST_SORT_TYPE = [
+  { label: '최신순', value: 'recent' },
+  { label: '좋아요순', value: 'favorite' },
+];
 function AllProducts() {
   const [products, setProducts] = useState([]);
-  const [sortType, setSortType] = useState('최신순');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const orderBy = searchParams.get('orderBy') || 'recent';
 
-  const onChange = (selectedValue) => {
-    setSortType(selectedValue);
+  const onChange = (option) => {
+    setSearchParams({ orderBy: option.value });
   };
-
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const { list: initialProduct } = await getProducts();
-        setProducts(initialProduct ?? []);
+        const { list } = await getProducts({
+          orderBy: orderBy === 'recent' ? 'recent' : 'favorite',
+        });
+        setProducts(list ?? []);
       } catch (error) {
         console.error('Failed to fetch products:', error);
       }
     }
     fetchProducts();
-  }, []);
-
-  // 정렬순하기.. 우선 복사하고
-  const sortedProducts = [...products];
-  // 정렬 조건
-  if (sortType === '최신순') {
-    // 복사한 배열에 sort((조건 a,b)=>{return 값으로 ... })
-    sortedProducts.sort((a, b) => {
-      return new Date(b.createdAt || 0) - new Date(a.createdAt || 0);
-      // 문자열 데이터를 Date로 Data객체로 변환됨.
-    });
-  } else if (sortType === '좋아요순') {
-    sortedProducts.sort((a, b) => {
-      return b.favoriteCount - a.favoriteCount;
-    });
-  }
+  }, [orderBy]);
 
   return (
     <div className={styles.allProduct}>
@@ -61,15 +51,20 @@ function AllProducts() {
           </LinkTo>
           <Dropdown
             options={LIST_SORT_TYPE}
-            value={sortType}
+            value={orderBy}
             onChange={onChange}
+            type="select"
           />
         </div>
       </div>
       <div className={styles.productsWrap}>
-        {sortedProducts.map((item) => {
+        {products.map((item) => {
           return (
-            <Link className={styles.product} key={item.id} to={`/${item.id}`}>
+            <Link
+              className={styles.product}
+              key={item.id}
+              to={`/items/${item.id}`}
+            >
               <ProductItem item={item} />
             </Link>
           );
