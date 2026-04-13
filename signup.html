@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 페이지</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/auth.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+  </head>
+  <body>
+    <h1 class="sr-only">회원가입 페이지</h1>
+    <div class="content-wrap">
+      <a class="logo-btn" href="/">
+        <span class="sr-only">판다마켓 홈</span>
+        <img src="./images/logo.svg" alt="" />
+      </a>
+      <form>
+        <div class="input-wrap">
+          <label class="input-label" for="email">이메일</label>
+          <input class="input-field" id="email" name="email" type="email" />
+        </div>
+        <div class="input-wrap">
+          <label class="input-label" for="nickname">닉네임</label>
+          <input
+            class="input-field"
+            id="nickname"
+            name="nickname"
+            type="text"
+          />
+        </div>
+        <div class="input-wrap">
+          <label class="input-label" for="password">비밀번호</label>
+          <div class="password-wrap">
+            <input
+              class="input-field"
+              id="password"
+              name="password"
+              type="password"
+            />
+            <img src="./images/ic_password_variant.svg" alt="비밀번호 보기" />
+          </div>
+        </div>
+        <div class="input-wrap">
+          <label class="input-label" for="password-confirm"
+            >비밀번호 확인</label
+          >
+          <div class="password-wrap">
+            <input
+              class="input-field"
+              id="password-confirm"
+              name="password-confirm"
+              type="password"
+            />
+            <img src="./images/ic_password_default.svg" alt="비밀번호 숨기기" />
+          </div>
+        </div>
+        <button class="submit-btn">회원가입</button>
+        <div class="social-login-wrap">
+          <span>간편 로그인하기</span>
+          <div>
+            <a href="https://www.google.com/">
+              <img src="./images/ic-google.svg" alt="" />
+            </a>
+            <a href="https://www.kakaocorp.com/page/">
+              <img src="./images/ic_kakao.svg" alt="" />
+            </a>
+          </div>
+        </div>
+        <p class="auth-switch">
+          이미 회원이신가요?<a href="./login.html">로그인</a>
+        </p>
+      </form>
+    </div>
+  </body>
+</html>
