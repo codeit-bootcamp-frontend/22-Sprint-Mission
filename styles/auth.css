@@ -1,14 +1,19 @@
 .content-wrap {
   width: 640px;
-  margin: 231px auto;
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
+.login-wrap {
+  margin: 231px auto;
+}
+
+.signup-wrap {
+  margin: 60px auto 178px;
+}
+
 .logo-btn {
-  display: flex;
-  justify-content: center;
   margin: 0 auto;
   width: 396px;
   height: 132px;
@@ -47,6 +52,10 @@ form {
   line-height: 26px;
 }
 
+.input-field ::placeholder {
+  color: var(--gray-400);
+}
+
 .submit-btn {
   border: none;
   border-radius: 40px;
@@ -69,6 +78,7 @@ form {
   align-items: center;
   background-color: #e6f2ff;
   padding: 16px 23px;
+  border-radius: 8px;
 }
 
 .social-login-wrap span {
@@ -113,4 +123,62 @@ form {
   transform: translateY(-50%);
   right: 24px;
   cursor: pointer;
+}
+
+@media (max-width: 1199px) {
+  .login-wrap {
+    margin: 190px auto 325px;
+  }
+
+  .signup-wrap {
+    margin: 48px auto 243px;
+  }
+}
+
+@media (max-width: 767px) {
+  .content-wrap {
+    width: calc(100% - 32px);
+    max-width: 400px;
+    gap: 24px;
+  }
+
+  .login-wrap {
+    margin: 80px auto 231px;
+  }
+
+  .signup-wrap {
+    margin: 24px auto 179px;
+  }
+
+  .logo-btn {
+    width: 198px;
+    height: 66px;
+  }
+
+  form {
+    gap: 16px;
+  }
+
+  .input-wrap {
+    gap: 8px;
+  }
+
+  .input-label {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .input-field {
+    padding: 15px 24px;
+  }
+
+  .submit-btn {
+    margin-bottom: 8px;
+  }
+
+  .social-login-wrap {
+    height: 75px;
+    padding: 16px 23px 16px 24px;
+    margin-bottom: 8px;
+  }
 }
