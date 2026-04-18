@@ -1,16 +1,18 @@
 import type { HeaderProps } from '@/shared/components/layout/header/header.types';
 import { Logo, LogoText } from '@/shared/assets/logos';
 import { cn } from '@/shared/utils/cn';
-import { Link, NavLink } from 'react-router';
+import { Link, NavLink, useLocation } from 'react-router';
 import { IcProfile } from '@/shared/assets/icons';
 import { Button } from '@/shared/components/button';
 
 const navigations = [
-  { to: '/', label: '자유게시판' },
-  { to: '/items', label: '중고마켓' },
+  { to: '/', label: '자유게시판', matchPaths: ['/'] },
+  { to: '/items', label: '중고마켓', matchPaths: ['/items', '/additem'] },
 ];
 
 export default function Header({ variant }: HeaderProps) {
+  const location = useLocation();
+
   return (
     <header className="h-17.5 border-b border-b-[#DFDFDF] bg-white px-6">
       <div className="mx-auto flex h-full max-w-380 items-center justify-between">
@@ -27,14 +29,13 @@ export default function Header({ variant }: HeaderProps) {
                 <NavLink
                   key={nav.to}
                   to={nav.to}
-                  className={({ isActive }) =>
-                    cn(
-                      'typo-lg-bold text-secondary-600 flex items-center px-1',
-                      'md:typo-2lg-bold md:px-3.75',
-                      'hover:bg-secondary-100',
-                      isActive && 'text-primary-100'
-                    )
-                  }
+                  className={cn(
+                    'typo-lg-bold text-secondary-600 flex items-center px-1',
+                    'md:typo-2lg-bold md:px-3.75',
+                    'hover:bg-secondary-100',
+                    nav.matchPaths.includes(location.pathname) &&
+                      'text-primary-100'
+                  )}
                 >
                   {nav.label}
                 </NavLink>

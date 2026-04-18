@@ -32,7 +32,7 @@ const buttonVariants = cva(
           'min-h-12 min-w-60 rounded-full px-[1em]',
         ],
         small48: ['typo-lg-semibold', 'min-h-12 rounded-lg px-7.5'],
-        small40: ['typo-lg-semibold', 'min-h-10 rounded-lg px-5.75'],
+        small40: ['typo-lg-semibold', 'min-h-10.5 rounded-lg px-5.75'],
       },
     },
     defaultVariants: {

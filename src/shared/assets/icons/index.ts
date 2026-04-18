@@ -6,6 +6,8 @@ import IcHeart from '@/shared/assets/icons/ic-heart.svg?react';
 import IcSearch from '@/shared/assets/icons/ic-search.svg?react';
 import IcSort from '@/shared/assets/icons/ic-sort.svg?react';
 import IcProfile from '@/shared/assets/icons/ic-profile.svg?react';
+import IcAdd from '@/shared/assets/icons/ic-add.svg?react';
+import IcClose from '@/shared/assets/icons/ic-close.svg?react';
 
 export {
   IcArrowLeft,
@@ -16,4 +18,6 @@ export {
   IcSearch,
   IcSort,
   IcProfile,
+  IcAdd,
+  IcClose,
 };
