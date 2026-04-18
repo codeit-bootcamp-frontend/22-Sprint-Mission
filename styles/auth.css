@@ -52,7 +52,7 @@ form {
   line-height: 26px;
 }
 
-.input-field ::placeholder {
+.input-field::placeholder {
   color: var(--gray-400);
 }
 
@@ -69,6 +69,10 @@ form {
   font-weight: 600;
   font-size: 20px;
   cursor: pointer;
+}
+
+.submit-btn:disabled {
+  background-color: var(--gray-400);
 }
 
 .social-login-wrap {
@@ -123,6 +127,24 @@ form {
   transform: translateY(-50%);
   right: 24px;
   cursor: pointer;
+}
+
+.error-msg {
+  padding-left: 16px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--error);
+  margin-top: -8px;
+  margin-bottom: -6px;
+}
+
+.error-msg:empty {
+  display: none;
+}
+
+.input-error {
+  border: 1px solid var(--error);
 }
 
 @media (max-width: 1199px) {
@@ -180,5 +202,9 @@ form {
     height: 75px;
     padding: 16px 23px 16px 24px;
     margin-bottom: 8px;
+  }
+
+  .error-msg {
+    margin-top: 0;
   }
 }

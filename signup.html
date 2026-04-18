@@ -30,6 +30,7 @@
             type="email"
             placeholder="이메일을 입력해주세요"
           />
+          <p class="error-msg"></p>
         </div>
         <div class="input-wrap">
           <label class="input-label" for="nickname">닉네임</label>
@@ -40,6 +41,7 @@
             type="text"
             placeholder="닉네임을 입력해주세요"
           />
+          <p class="error-msg"></p>
         </div>
         <div class="input-wrap">
           <label class="input-label" for="password">비밀번호</label>
@@ -53,6 +55,7 @@
             />
             <img src="./images/ic_password_variant.svg" alt="비밀번호 보기" />
           </div>
+          <p class="error-msg"></p>
         </div>
         <div class="input-wrap">
           <label class="input-label" for="password-confirm"
@@ -68,13 +71,14 @@
             />
             <img src="./images/ic_password_default.svg" alt="비밀번호 숨기기" />
           </div>
+          <p class="error-msg"></p>
         </div>
-        <button class="submit-btn">회원가입</button>
+        <button class="submit-btn" disabled>회원가입</button>
         <div class="social-login-wrap">
           <span>간편 로그인하기</span>
           <div>
             <a href="https://www.google.com/">
-              <img src="./images/ic-google.svg" alt="구글 계정으로 로그인" />
+              <img src="./images/ic_google.svg" alt="구글 계정으로 로그인" />
             </a>
             <a href="https://www.kakaocorp.com/page/">
               <img src="./images/ic_kakao.svg" alt="카카오 계정으로 로그인" />
@@ -86,5 +90,6 @@
         </p>
       </form>
     </main>
+    <script src="./scripts/signup.js"></script>
   </body>
 </html>
