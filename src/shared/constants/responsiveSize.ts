@@ -1,0 +1,4 @@
+export const RESPONSIVE_PAGE_SIZE = {
+  DESKTOP: 1024,
+  TABLET: 768,
+};

@@ -1,0 +1,18 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+@import 'tailwindcss';
+
+@import './fonts.css';
+@import './colors.css';
+
+@theme {
+  --z-index-base: 10; /* Base Content */
+  --z-index-header: 100; /* Navigation & Layout */
+  --z-index-dropdown: 500; /* Floating UI */
+  --z-index-modal-backdrop: 900; /* Full-screen Overlays */
+  --z-index-modal: 1000; /* Full-screen Overlays */
+  --z-index-toast: 1100; /* Toast */
+}
+
+@utility hover-fade {
+  @apply cursor-pointer transition-opacity duration-200 hover:opacity-80;
+}
